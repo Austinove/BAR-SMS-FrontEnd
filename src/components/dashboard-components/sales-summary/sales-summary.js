@@ -55,7 +55,29 @@ const SalesSummary = () => {
                     <Col lg="12">
                         <div className="campaign ct-charts">
                             <div className="chart-wrapper" style={{ width: '100%', margin: '0 auto', height: 250 }}>
-                                <Line data={lineData} options={{ maintainAspectRatio: false, legend: { display: false, labels: { fontFamily: "Nunito Sans" } }, scales: { yAxes: [{ stacked: true, gridLines: { display: false }, ticks: { fontFamily: "Nunito Sans" } }], xAxes: [{ gridLines: { display: false }, ticks: { fontFamily: "Nunito Sans" } }] } }} />
+                                <Line 
+                                    data={lineData} 
+                                    options={{ 
+                                        maintainAspectRatio: false, 
+                                        legend: { display: false, 
+                                        labels: { fontFamily: "Nunito Sans" } }, 
+                                        scales: { 
+                                            yAxes: [
+                                                { 
+                                                    stacked: true, 
+                                                    gridLines: { display: false }, 
+                                                    ticks: { fontFamily: "Nunito Sans" } 
+                                                }
+                                            ], 
+                                            xAxes: [
+                                                { 
+                                                    gridLines: { display: false }, 
+                                                    ticks: { fontFamily: "Nunito Sans" } 
+                                                }
+                                            ] 
+                                        } 
+                                    }} 
+                                />
                             </div>
                         </div>
                     </Col>

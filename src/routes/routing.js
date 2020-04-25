@@ -3,6 +3,7 @@ import Starter from "../views/starter/starter.js";
 import Home from "../views/home";
 import Sales from "../views/sales";
 import Profits from "../views/profits";
+import Stock from "../views/stock";
 import Alerts from "../views/ui-components/alert.js";
 import Badges from "../views/ui-components/badge.js";
 import Buttons from "../views/ui-components/button.js";
@@ -30,6 +31,12 @@ var ThemeRoutes = [
     name: "profits stat",
     icon: "fas fa-chart-bar",
     component: Profits
+  },
+  {
+    path: "/stock",
+    name: "Store/Store",
+    icon: "mdi mdi-arrange-send-backward",
+    component: Stock
   },
   {
     path: "/home",
