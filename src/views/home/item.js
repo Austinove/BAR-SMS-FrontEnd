@@ -8,6 +8,7 @@ import {
     Progress,
     Button
 } from "reactstrap";
+import SalesModal from "../view-elements/modal/salesModal";
 
 const Item = (props) => {
     const { item } = props;
@@ -45,12 +46,14 @@ const Item = (props) => {
                             </div>
                         </p>
                         <div className="mt-3 justify-content-md-center">
-                            <Button color="light" block size="sm" type="button">
-                                <span className="text-nowrap text-success">
-                                    <i class="fa fa-shopping-bag mr-2" aria-hidden="true"></i>
-                                    Click to Sale
-                                </span>
-                            </Button>
+                            <SalesModal 
+                                buttonLabel="Click to Sale"
+                                className="modal-dialog-centered"
+                                btnSpan_className="text-nowrap text-success"
+                                btn_icon="fa fa-shopping-bag mr-2"
+                                modelTitle="Make Sale from Counter"
+                                subLabel="Submit Sale"
+                            />
                         </div>
                     </CardBody>
                 </Card>
