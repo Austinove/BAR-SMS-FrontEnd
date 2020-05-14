@@ -9,10 +9,8 @@ import {
     Form,
     Row,
     Col,
-    FormGroup,
-    Label
+    FormGroup
 } from "reactstrap";
-import { CustomAlert } from '../alert';
 
 const SalesModal = (props) => {
     const { 
@@ -27,7 +25,7 @@ const SalesModal = (props) => {
     const toggle = () => setModal(!modal);
     const btnSpan = (btnSpan_className, btn_icon, buttonLabel) => (
         <span className={btnSpan_className}>
-            <i class={btn_icon} />
+            <i className={btn_icon} />
             {buttonLabel}
         </span>
     )

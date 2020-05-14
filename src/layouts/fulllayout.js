@@ -80,7 +80,7 @@ const Fulllayout = (props) => {
                             }
                             else {
                                 return (
-                                    <Route path={prop.path} component={prop.component} key={key} />
+                                    <Route path={prop.path} exact component={prop.component} key={key} />
                                 );
                             }
                         })}

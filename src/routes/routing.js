@@ -12,6 +12,7 @@ import LayoutComponent from "../views/ui-components/layout.js";
 import PaginationComponent from "../views/ui-components/pagination.js";
 import PopoverComponent from "../views/ui-components/popover.js";
 import TooltipComponent from "../views/ui-components/tooltip.js";
+import StockLogs from "../views/stock/logs/index.js";
 
 var ThemeRoutes = [
   {
@@ -91,6 +92,11 @@ var ThemeRoutes = [
     name: "Toltips",
     icon: "mdi mdi-image-filter-vintage",
     component: TooltipComponent,
+  },
+  {
+    path: "/stock/logos",
+    component: StockLogs,
+    innerRoutes: true
   },
   { path: "/", pathTo: "/dashboard", name: "Dashboard", redirect: true },
 ];

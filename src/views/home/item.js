@@ -5,8 +5,7 @@ import {
     Row,
     CardTitle,
     Col,
-    Progress,
-    Button
+    Progress
 } from "reactstrap";
 import SalesModal from "../view-elements/modal/salesModal";
 

@@ -4,11 +4,10 @@ import {
     Card,
     CardBody,
     CardTitle,
-    Row,
-    Progress,
-    Button
+    Row
 } from "reactstrap";
 import SalesModal from '../view-elements/modal/salesModal';
+import { Link } from 'react-router-dom';
 
 const StoreItem = (props) => {
     const { item } = props;
@@ -26,9 +25,11 @@ const StoreItem = (props) => {
                             </div>
                             <Col className="col-auto">
                                 <div className="icon icon-shape bg-default">
-                                    <span style={{ cursor: "pointer" }} className="text-primary">
-                                        Logs <i className="mdi mdi-image-filter-vintage" />
-                                    </span>
+                                    <Link to="/stock/logos" >
+                                        <span style={{ cursor: "pointer" }} className="text-primary">
+                                            Logs <i className="mdi mdi-image-filter-vintage" />
+                                        </span>
+                                    </Link>
                                 </div>
                             </Col>
                         </Row>
@@ -36,14 +37,14 @@ const StoreItem = (props) => {
                             <strong className="text-success mr-2">
                                 20
                             </strong>
-                            <i class="fa fa-minus" />
+                            <i className="fa fa-minus" />
                             <span className="text-nowrap"> Crates</span>
                         </p>
                         <p className="mt-3 mb-0 text-muted text-sm">
                             <strong className="text-success mr-2">
                                 10
                             </strong>
-                            <i class="fa fa-minus" />
+                            <i className="fa fa-minus" />
                             <span className="text-nowrap"> Bottles</span>
                         </p>
                         <div className="mt-3 justify-content-md-center">
