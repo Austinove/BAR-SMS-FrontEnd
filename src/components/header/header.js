@@ -21,6 +21,7 @@ import logodarkicon from '../../assets/images/logo-icon.png';
 import logolighticon from '../../assets/images/logo-light-icon.png';
 import logodarktext from '../../assets/images/logo-text.png';
 import logolighttext from '../../assets/images/logo-light-text.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -82,7 +83,9 @@ const Header = () => {
                             </DropdownToggle>
                             <DropdownMenu right className="user-dd">
                                 <DropdownItem>
-                                    <i className="ti-user mr-1 ml-1" /> My Account
+                                    <Link to="/profile">
+                                        <i className="ti-user mr-1 ml-1" /> My Account
+                                    </Link>
                             </DropdownItem>
                                 <DropdownItem>
                                     <i className="ti-wallet mr-1 ml-1" /> My Balance

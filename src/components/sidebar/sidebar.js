@@ -18,7 +18,6 @@ const Sidebar = (props) => {
     const activeRoute = (routeName) => {
         return props.location.pathname.indexOf(routeName) > -1 ? 'selected' : '';
     }
-    console.log("props->",props);
 
     return (
         <aside className="left-sidebar" id="sidebarbg" data-sidebarbg="skin6" onMouseEnter={expandLogo.bind(null)} onMouseLeave={expandLogo.bind(null)}>

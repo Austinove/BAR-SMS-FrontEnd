@@ -13,6 +13,7 @@ import PaginationComponent from "../views/ui-components/pagination.js";
 import PopoverComponent from "../views/ui-components/popover.js";
 import TooltipComponent from "../views/ui-components/tooltip.js";
 import StockLogs from "../views/stock/logs/index.js";
+import Profile from "../views/profile/index.js";
 
 var ThemeRoutes = [
   {
@@ -38,6 +39,12 @@ var ThemeRoutes = [
     name: "Store/Store",
     icon: "mdi mdi-arrange-send-backward",
     component: Stock
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    icon: "ti-loop",
+    component: Profile
   },
   {
     path: "/home",
