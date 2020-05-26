@@ -14,6 +14,7 @@ import PopoverComponent from "../views/ui-components/popover.js";
 import TooltipComponent from "../views/ui-components/tooltip.js";
 import StockLogs from "../views/stock/logs/index.js";
 import Profile from "../views/profile/index.js";
+import AddItem from "../views/items/index.js";
 
 var ThemeRoutes = [
   {
@@ -45,6 +46,12 @@ var ThemeRoutes = [
     name: "Profile",
     icon: "ti-loop",
     component: Profile
+  },
+  {
+    path: "/create/item",
+    name: "New Item",
+    icon: "ti-loop",
+    component: AddItem
   },
   {
     path: "/home",
