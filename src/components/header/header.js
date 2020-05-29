@@ -84,30 +84,19 @@ const Header = () => {
                             <DropdownMenu right className="user-dd">
                                 <DropdownItem>
                                     <Link to="/profile">
-                                        <i className="ti-user mr-1 ml-1" /> My Account
+                                        <i className="ti-user mr-1 ml-1" /> Profile
                                     </Link>
-                            </DropdownItem>
-                                <DropdownItem>
-                                    <i className="ti-wallet mr-1 ml-1" /> My Balance
-                            </DropdownItem>
-                                <DropdownItem>
-                                    <i className="ti-email mr-1 ml-1" /> Inbox
-                            </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    <i className="ti-settings mr-1 ml-1" /> Account Settings
-                            </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem href="/pages/login">
-                                    <i className="fa fa-power-off mr-1 ml-1" /> Logout
-                            </DropdownItem>
-                                <DropdownItem divider />
-                                <Button
-                                    color="success"
-                                    className="btn-rounded ml-3 mb-2 mt-2"
-                                >
-                                    View Profile
-                                </Button>
+                                </DropdownItem>
+                                    <DropdownItem divider />
+                                    <DropdownItem>
+                                        <Link to="/account/setting">
+                                            <i className="ti-settings mr-1 ml-1" /> Account Settings
+                                        </Link>
+                                </DropdownItem>
+                                    <DropdownItem divider />
+                                    <DropdownItem href="/pages/login">
+                                        <i className="fa fa-power-off mr-1 ml-1" /> Logout
+                                </DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>
                         {/*--------------------------------------------------------------------------------*/}

@@ -1,0 +1,46 @@
+// =====================================
+// my custom scss
+// =====================================
+.login-container {
+    height: 100vh;
+    .row .login-row {
+        height: 100%;
+    }
+}
+.logos {
+    cursor: pointer !important;
+}
+.back-btn,
+.add-btn,
+.item-header {
+    width: max-content;
+}
+.form-control-alternative {
+    box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02) !important;
+    border: 0 !important;
+    transition: box-shadow 0.15s ease !important;
+    border-radius: 0.3rem !important;
+    height: 50px !important;
+}
+.nav-wrapper {
+    padding: 1rem 0;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+.nav-pills .nav-item:not(:last-child) {
+    padding-right: 1rem;
+}
+.nav-pills .nav-link {
+    padding: 0.75rem 1rem;
+    color: #5e72e4;
+    font-weight: 500;
+    font-size: 0.875rem;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+    background-color: #fff;
+    transition: all 0.15s ease;
+    border-radius: 0.3rem !important;
+}
+.pointed:hover {
+    cursor: pointer !important;
+}
+

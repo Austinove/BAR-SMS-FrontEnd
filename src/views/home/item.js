@@ -11,7 +11,6 @@ import SalesModal from "../view-elements/modal/salesModal";
 
 const Item = (props) => {
     const { item } = props;
-    console.log(item);
     return (
         <Col className="mb-2" xs="12" lg="4" md="4">
             <div style={{ width: "18rem" }}>

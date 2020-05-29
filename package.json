@@ -5,6 +5,7 @@
     "dependencies": {
         "bootstrap": "4.1.3",
         "chart.js": "2.7.2",
+        "classnames": "^2.2.6",
         "connected-react-router": "^6.8.0",
         "history": "4.7.2",
         "node-sass": "^4.12.0",
@@ -26,7 +27,7 @@
         "start": "npm-run-all -p watch-sass start-js",
         "start-js": "react-scripts start",
         "build": "npm run minify-css && react-scripts build",
-        "minify-css": "node-sass --output-style compressed src/assets/scss/style.scss src/assets/scss/style.css",
+        "minify-css": "node-sass --output-style src/assets/scss/style.scss src/assets/scss/style.css",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "watch-sass": "sass --watch src/assets/scss/style.scss:src/assets/scss/style.css"

@@ -13,8 +13,9 @@ import PaginationComponent from "../views/ui-components/pagination.js";
 import PopoverComponent from "../views/ui-components/popover.js";
 import TooltipComponent from "../views/ui-components/tooltip.js";
 import StockLogs from "../views/stock/logs/index.js";
-import Profile from "../views/profile/index.js";
+import Profile from "../views/accounts/profile/index.js";
 import AddItem from "../views/items/index.js";
+import AccountSetting from "../views/accounts/settings/index.js";
 
 var ThemeRoutes = [
   {
@@ -110,6 +111,11 @@ var ThemeRoutes = [
   {
     path: "/stock/logos",
     component: StockLogs,
+    innerRoutes: true
+  },
+  {
+    path: "/account/setting",
+    component: AccountSetting,
     innerRoutes: true
   },
   { path: "/", pathTo: "/dashboard", name: "Dashboard", redirect: true },
