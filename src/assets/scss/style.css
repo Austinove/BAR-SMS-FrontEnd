@@ -83,7 +83,6 @@ File: scss
 
 .form-control-alternative {
   box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02) !important;
-  border: 0 !important;
   transition: box-shadow 0.15s ease !important;
   border-radius: 0.3rem !important;
   height: 50px !important;
@@ -112,6 +111,26 @@ File: scss
 
 .pointed:hover {
   cursor: pointer !important;
+}
+
+.errorInput {
+  border-bottom: 1px solid red !important;
+}
+
+.sm-font {
+  font-size: 12px !important;
+}
+
+.category {
+  font-size: 14px;
+  color: #8898aa;
+  margin: 25px 60px 10px 15px;
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 0.1rem solid #eff1f3;
+}
+.category span {
+  margin-left: 10px;
 }
 
 /*!

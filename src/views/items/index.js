@@ -25,28 +25,33 @@ const AddItem = (props) => {
   const items = [
     {
       name: "Nile Special",
-      manifacturer: "Nile Manufactures LTD",
-      price: 3500
+      manufacturer: "Nile Manufactures LTD",
+      price: 3500,
+      crateSize: 25
     },
     {
       name: "Pilsnar",
-      manifacturer: "Nile Manufactures LTD",
-      price: 3000
+      manufacturer: "Nile Manufactures LTD",
+      price: 3000,
+      crateSize: 20
     },
     {
       name: "Tusker",
-      manifacturer: "Nile Manufactures LTD",
-      price: 3200
+      manufacturer: "Nile Manufactures LTD",
+      price: 3200,
+      crateSize: 25
     },
     {
       name: "Nile Special",
-      manifacturer: "Nile Manufactures LTD",
-      price: 3500
+      manufacturer: "Nile Manufactures LTD",
+      price: 3500,
+      crateSize: 20
     },
     {
       name: "Nile Special",
-      manifacturer: "Nile Manufactures LTD",
-      price: 3500
+      manufacturer: "Nile Manufactures LTD",
+      price: 3500,
+      crateSize: 25
     }
   ]
   return (

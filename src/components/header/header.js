@@ -19,8 +19,6 @@ import profilephoto from '../../assets/images/users/1.jpg';
 /*--------------------------------------------------------------------------------*/
 import logodarkicon from '../../assets/images/logo-icon.png';
 import logolighticon from '../../assets/images/logo-light-icon.png';
-import logodarktext from '../../assets/images/logo-text.png';
-import logolighttext from '../../assets/images/logo-light-text.png';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -48,14 +46,7 @@ const Header = () => {
                                 className="light-logo"
                             />
                         </b>
-                        <span className="logo-text">
-                            <img src={logodarktext} alt="homepage" className="dark-logo" />
-                            <img
-                                src={logolighttext}
-                                className="light-logo"
-                                alt="homepage"
-                            />
-                        </span>
+                        <span className="logo-text text-secondary font-weight-bold">The Bar</span>
                     </NavbarBrand>
                     {/*--------------------------------------------------------------------------------*/}
                     {/* Mobile View Toggler  [visible only after 768px screen]                         */}
@@ -66,36 +57,28 @@ const Header = () => {
                 </div>
                 <Collapse className="navbarbg" navbar data-navbarbg="skin1" >
                     <Nav className="ml-auto float-right" navbar>
-                        <NavItem>
-                            <a href="link" className="btn btn-danger mr-2" style={{ marginTop: '15px' }}>Upgrade to Pro</a>
-                        </NavItem>
                         {/*--------------------------------------------------------------------------------*/}
                         {/* Start Profile Dropdown                                                         */}
                         {/*--------------------------------------------------------------------------------*/}
                         <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret className="pro-pic">
-                                <img
-                                    src={profilephoto}
-                                    alt="user"
-                                    className="rounded-circle"
-                                    width="31"
-                                />
+                            <DropdownToggle nav caret className="font-weight-bold">
+                                Bryan <i className="fa fa-caret-down"/>
                             </DropdownToggle>
                             <DropdownMenu right className="user-dd">
-                                <DropdownItem>
-                                    <Link to="/profile">
-                                        <i className="ti-user mr-1 ml-1" /> Profile
-                                    </Link>
-                                </DropdownItem>
-                                    <DropdownItem divider />
+                                <Link to="/profile">
                                     <DropdownItem>
-                                        <Link to="/account/setting">
-                                            <i className="ti-settings mr-1 ml-1" /> Account Settings
-                                        </Link>
-                                </DropdownItem>
-                                    <DropdownItem divider />
-                                    <DropdownItem href="/pages/login">
-                                        <i className="fa fa-power-off mr-1 ml-1" /> Logout
+                                        <i className="ti-user mr-1 ml-1" /> Profile
+                                    </DropdownItem>
+                                </Link>
+                                <DropdownItem divider />
+                                <Link to="/account/setting">
+                                    <DropdownItem>
+                                        <i className="ti-settings mr-1 ml-1" /> Account Settings
+                                    </DropdownItem>
+                                </Link>
+                                <DropdownItem divider />
+                                <DropdownItem href="/pages/login">
+                                    <i className="fa fa-power-off mr-1 ml-1" /> Logout
                                 </DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>
