@@ -59,4 +59,19 @@
         margin-left: 10px;
     }
 }
+.drop-items {
+    display: block;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+.dropDown-menu-custom[style]{
+    transform: translate3d(0px, 30px, 0px) !important;
+}
 
