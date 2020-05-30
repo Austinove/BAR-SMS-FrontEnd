@@ -23,10 +23,10 @@ const Sidebar = (props) => {
     const accountCategory = props.routes.filter(route => (route.category === "Account"));
 
     const renderNav = (category, routes) => {
-        return(
+        return (
             <>
                 <div className="category">
-                <span>{category}</span>
+                    <span>{category}</span>
                 </div>
                 {
                     routes.map((prop, key) => {
