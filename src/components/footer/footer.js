@@ -3,9 +3,9 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="footer text-center">
-            All Rights Reserved by AusDev Co Ltd. Designed and Developed by <strong>{' Kulaba Bryan '}</strong>
-            <a href="https://github/austinove.com"> Check profile</a>.
+        <footer className="footer text-right">
+            Version 1.0 by <strong> Bryan Austin</strong>
+            <a href="https://github.com/austinove"> Check profile</a>.
         </footer>
     );
 }
