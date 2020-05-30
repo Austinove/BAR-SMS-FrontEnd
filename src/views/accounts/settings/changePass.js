@@ -14,20 +14,6 @@ import {Formik} from 'formik';
 import * as Yup from "yup";
 
 const ChangePass = () => {
-
-    const renderInput = (lebel, inputVal, name) => (
-      <FormGroup>
-        <Label>{lebel}</Label>
-        <Input
-          type="password"
-          placeholder="**********"
-          className="form-control-alternative"
-          name={name}
-          id={name}
-          value={inputVal}
-        />
-      </FormGroup>
-    );
     return (
       <Container>
         <CardHeader>
@@ -61,7 +47,7 @@ const ChangePass = () => {
               <Row>
                 <Col md="8" className="ml-auto mr-auto">
                   <FormGroup>
-                    <Label>Old Password</Label>
+                    <Label>Old Password *</Label>
                     <Input
                       type="password"
                       placeholder="**********"
@@ -80,7 +66,7 @@ const ChangePass = () => {
                     ) : null}
                   </FormGroup>
                   <FormGroup>
-                    <Label>New Password</Label>
+                    <Label>New Password *</Label>
                     <Input
                       type="password"
                       placeholder="**********"
@@ -99,7 +85,7 @@ const ChangePass = () => {
                     ) : null}
                   </FormGroup>
                   <FormGroup>
-                    <Label>Confirm Password</Label>
+                    <Label>Confirm Password *</Label>
                     <Input
                       type="password"
                       placeholder="**********"
@@ -124,7 +110,7 @@ const ChangePass = () => {
               <Row>
                 <Col md="8" className="ml-auto mr-auto">
                   <Button color="success" size="md">
-                    <i class="fa fa-save"></i> Save Changes
+                    <i className="fa fa-save"></i> Save Changes
                   </Button>
                 </Col>
               </Row>

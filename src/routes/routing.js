@@ -19,105 +19,114 @@ import AccountSetting from "../views/accounts/settings/index.js";
 
 var ThemeRoutes = [
   {
+    category: "Counter",
     path: "/dashboard",
     name: "Dashboard",
     icon: "ti-loop",
     component: Home,
   },
   {
+    category: "Counter",
     path: "/sales",
     name: "Sales",
     icon: "mdi mdi-arrange-send-backward",
     component: Sales,
   },
   {
+    category: "Store",
     path: "/profits",
     name: "profits stat",
     icon: "fas fa-chart-bar",
     component: Profits
   },
   {
+    category: "Store",
     path: "/stock",
     name: "Store/Store",
     icon: "mdi mdi-arrange-send-backward",
     component: Stock
   },
   {
-    path: "/profile",
-    name: "Profile",
-    icon: "ti-loop",
-    component: Profile
-  },
-  {
+    category: "Store",
     path: "/create/item",
     name: "New Item",
     icon: "ti-loop",
     component: AddItem
   },
   {
-    path: "/home",
-    name: "Home",
+    category: 'Account',
+    path: "/account/profile",
+    name: "Profile",
     icon: "ti-loop",
-    component: Starter,
+    component: Profile
   },
   {
-    path: "/alert",
-    name: "Alerts",
-    icon: "mdi mdi-comment-processing-outline",
-    component: Alerts,
-  },
-  {
-    path: "/badge",
-    name: "Badges",
-    icon: "mdi mdi-arrange-send-backward",
-    component: Badges,
-  },
-  {
-    path: "/button",
-    name: "Buttons",
-    icon: "mdi mdi-toggle-switch",
-    component: Buttons,
-  },
-  {
-    path: "/card",
-    name: "Cards",
-    icon: "mdi mdi-credit-card-multiple",
-    component: Cards,
-  },
-  {
-    path: "/grid",
-    name: "Grid",
-    icon: "mdi mdi-apps",
-    component: LayoutComponent,
-  },
-  {
-    path: "/pagination",
-    name: "Pagination",
-    icon: "mdi mdi-priority-high",
-    component: PaginationComponent,
-  },
-  {
-    path: "/popover",
-    name: "Popover",
-    icon: "mdi mdi-pencil-circle",
-    component: PopoverComponent,
-  },
-  {
-    path: "/ui-components/tooltip",
-    name: "Toltips",
+    category: "Account",
+    path: "/account/setting",
+    name: "Account Settings",
     icon: "mdi mdi-image-filter-vintage",
-    component: TooltipComponent,
+    component: AccountSetting
   },
   {
     path: "/stock/logos",
     component: StockLogs,
     innerRoutes: true
   },
-  {
-    path: "/account/setting",
-    component: AccountSetting,
-    innerRoutes: true
-  },
   { path: "/", pathTo: "/dashboard", name: "Dashboard", redirect: true },
 ];
 export default ThemeRoutes;
+
+// {
+  //   path: "/home",
+  //   name: "Home",
+  //   icon: "ti-loop",
+  //   component: Starter,
+  // },
+  // {
+  //   path: "/alert",
+  //   name: "Alerts",
+  //   icon: "mdi mdi-comment-processing-outline",
+  //   component: Alerts,
+  // },
+  // {
+  //   path: "/badge",
+  //   name: "Badges",
+  //   icon: "mdi mdi-arrange-send-backward",
+  //   component: Badges,
+  // },
+  // {
+  //   path: "/button",
+  //   name: "Buttons",
+  //   icon: "mdi mdi-toggle-switch",
+  //   component: Buttons,
+  // },
+  // {
+  //   path: "/card",
+  //   name: "Cards",
+  //   icon: "mdi mdi-credit-card-multiple",
+  //   component: Cards,
+  // },
+  // {
+  //   path: "/grid",
+  //   name: "Grid",
+  //   icon: "mdi mdi-apps",
+  //   component: LayoutComponent,
+  // },
+  // {
+  //   path: "/pagination",
+  //   name: "Pagination",
+  //   icon: "mdi mdi-priority-high",
+  //   component: PaginationComponent,
+  // },
+  // {
+  //   path: "/popover",
+  //   name: "Popover",
+  //   icon: "mdi mdi-pencil-circle",
+  //   component: PopoverComponent,
+  // },
+  // {
+  //   path: "/ui-components/tooltip",
+  //   name: "Toltips",
+  //   icon: "mdi mdi-image-filter-vintage",
+  //   component: TooltipComponent,
+  // },

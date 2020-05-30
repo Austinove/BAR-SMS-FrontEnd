@@ -1,101 +1,183 @@
-import React from 'react'
+import React from "react";
 import {
   Form,
   Row,
   Col,
   FormGroup,
   Input,
-  Card,
-  CardBody,
-  CardTitle,
   Container,
   Button,
   Label,
 } from "reactstrap";
+import { Formik } from "formik";
+import * as Yup from "yup";
 
 const AddUser = () => {
-    const renderInput = (lebel, inputVal, type = "text", placeholder, name) => (
-      <Col md="6">
-        <FormGroup>
-          <Label>{lebel}</Label>
-          <Input
-            className="form-control-alternative"
-            name={name}
-            value={inputVal}
-            placeholder={placeholder}
-            type={type}
-            // autoComplete="off"
-          />
-        </FormGroup>
-      </Col>
-    );
-    return (
-      <Container>
-        <Row>
-          <Col md="10" className="ml-auto mr-auto">
-            <Form>
-              <Row>
-                {renderInput(
-                  "User Names",
-                  null,
-                  null,
-                  "User Names",
-                  "userName"
-                )}
-                {renderInput(
-                  "Place of Residence",
-                  null,
-                  "null",
-                  "Where user lives",
-                  "residence"
-                )}
-                {renderInput(
-                  "Email (optional)",
-                  null,
-                  "email",
-                  "user@gmail.com",
-                  "email"
-                )}
-                {renderInput(
-                  "Phone Number",
-                  null,
-                  null,
-                  "User Phone Number",
-                  "number"
-                )}
-              </Row>
-              <hr/>
-              <Row className="mt-3">
-                {renderInput(
-                  "Parent's Names",
-                  null,
-                  null,
-                  "Parent's Names",
-                  "parentName"
-                )}
-                {renderInput(
-                  "Phone Number",
-                  null,
-                  null,
-                  "Parent's Phone Number",
-                  "parentNumber"
-                )}
-              </Row>
-              <Row>
-                <Col md="6">
-                  <FormGroup className="has-success">
-                    <Label></Label>
-                    <Button color="info" size="md">
-                      <i class="fa fa-plus-circle"></i> Add User
+  return (
+    <Container>
+      <Row>
+        <Col md="10" className="ml-auto mr-auto">
+          <Formik
+            initialValues={{
+              userName: "",
+              residence: "",
+              email: "",
+              number: "",
+              userType:""
+            }}
+            validationSchema={Yup.object({
+              userName: Yup.string()
+                .max(20, "Atmost 20 Characters Needed")
+                .required("User Name is Required"),
+              residence: Yup.string().required(
+                "Place of Residence is Required"
+              ),
+              email: Yup.string().email("Invalid Email Address"),
+              number: Yup.string()
+                .min(10, "Invalid Number")
+                .max(10, "Only 10 Numbers Needed")
+                .required("Phone Number is Required"),
+              userType: Yup.string()
+                .required("User Type is Required"),
+            })}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(() => {
+                console.log(JSON.stringify(values, null, 2));
+                setSubmitting(false);
+              }, 400);
+            }}
+          >
+            {(formik) => (
+              <Form onSubmit={formik.handleSubmit}>
+                <Row>
+                  <Col md="6">
+                    <FormGroup>
+                      <Label>User Name *</Label>
+                      <Input
+                        className={
+                          formik.touched.userName && formik.errors.userName
+                            ? "form-control-alternative errorInput"
+                            : "form-control-alternative"
+                        }
+                        id="userName"
+                        placeholder="User Name"
+                        {...formik.getFieldProps("userName")}
+                        // autoComplete="off"
+                      />
+                      {formik.touched.userName && formik.errors.userName ? (
+                        <div className="text-danger mt-1 sm-font">
+                          {formik.errors.userName}
+                        </div>
+                      ) : null}
+                    </FormGroup>
+                  </Col>
+                  <Col md="6">
+                    <FormGroup>
+                      <Label>Place of Residence *</Label>
+                      <Input
+                        className={
+                          formik.touched.residence && formik.errors.residence
+                            ? "form-control-alternative errorInput"
+                            : "form-control-alternative"
+                        }
+                        id="residence"
+                        placeholder="Where User Lives"
+                        {...formik.getFieldProps("residence")}
+                        // autoComplete="off"
+                      />
+                      {formik.touched.residence && formik.errors.residence ? (
+                        <div className="text-danger mt-1 sm-font">
+                          {formik.errors.residence}
+                        </div>
+                      ) : null}
+                    </FormGroup>
+                  </Col>
+                  <Col md="6">
+                    <FormGroup>
+                      <Label>
+                        Email (<span className="font-italic">optional </span>)
+                      </Label>
+                      <Input
+                        className={
+                          formik.touched.email && formik.errors.email
+                            ? "form-control-alternative errorInput"
+                            : "form-control-alternative"
+                        }
+                        id="email"
+                        type="email"
+                        placeholder="user@email.com"
+                        {...formik.getFieldProps("email")}
+                        // autoComplete="off"
+                      />
+                      {formik.touched.email && formik.errors.email ? (
+                        <div className="text-danger mt-1 sm-font">
+                          {formik.errors.email}
+                        </div>
+                      ) : null}
+                    </FormGroup>
+                  </Col>
+                  <Col md="6">
+                    <FormGroup>
+                      <Label>Phone Number *</Label>
+                      <Input
+                        className={
+                          formik.touched.number && formik.errors.number
+                            ? "form-control-alternative errorInput"
+                            : "form-control-alternative"
+                        }
+                        id="number"
+                        placeholder="07.........."
+                        {...formik.getFieldProps("number")}
+                        // autoComplete="off"
+                      />
+                      {formik.touched.number && formik.errors.number ? (
+                        <div className="text-danger mt-1 sm-font">
+                          {formik.errors.number}
+                        </div>
+                      ) : null}
+                    </FormGroup>
+                  </Col>
+                  <Col md="6">
+                    <FormGroup>
+                      <Label>User Type *</Label>
+                      <Input
+                        className={
+                          formik.touched.userType &&
+                          formik.errors.userType
+                            ? "form-control-alternative errorInput"
+                            : "form-control-alternative"
+                        }
+                        id="userType"
+                        type="select"
+                        {...formik.getFieldProps("userType")}
+                      >
+                        <option value="">Select Type</option>
+                        <option value="worker">Employee</option>
+                        <option value="admin">Admin</option>
+                      </Input>
+                      {formik.touched.userType &&
+                      formik.errors.userType ? (
+                        <div className="text-danger mt-1 sm-font">
+                          {formik.errors.userType}
+                        </div>
+                      ) : null}
+                    </FormGroup>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md="6">
+                    <Button type="submit" color="info" size="md">
+                      <i className="fa fa-plus-circle"></i> Add User
                     </Button>
-                  </FormGroup>
-                </Col>
-              </Row>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
-    );
-}
+                  </Col>
+                </Row>
+              </Form>
+            )}
+          </Formik>
+        </Col>
+      </Row>
+    </Container>
+  );
+};
 
-export default AddUser
+export default AddUser;

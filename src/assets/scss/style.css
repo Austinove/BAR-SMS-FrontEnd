@@ -121,6 +121,18 @@ File: scss
   font-size: 12px !important;
 }
 
+.category {
+  font-size: 14px;
+  color: #8898aa;
+  margin: 25px 60px 10px 15px;
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 0.1rem solid #eff1f3;
+}
+.category span {
+  margin-left: 10px;
+}
+
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
