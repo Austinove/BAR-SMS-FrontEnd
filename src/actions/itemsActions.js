@@ -5,10 +5,10 @@ export const fetchStoreItemsRequest = () => {
         type: itemsConstants.fetch_storeItems
     }
 }
-export const fetchStoreItemsSuccess = items => {
+export const fetchStoreItemsSuccess = Items => {
   return {
     type: itemsConstants.fetch_storeItems_success,
-    items
+    Items
   };
 };
 export const fetchStoreItemsFail = () => {
@@ -23,10 +23,10 @@ export const addStoreItemRequest = itemData => {
     itemData
   };
 };
-export const addStoreItemSuccess = items => {
+export const addStoreItemSuccess = Items => {
   return {
     type: itemsConstants.add_storeItem_success,
-    items
+    Items
   };
 };
 export const addStoreItemFail = () => {
@@ -41,10 +41,10 @@ export const editStoreItemRequest = id => {
     id,
   };
 };
-export const editStoreItemSuccess = items => {
+export const editStoreItemSuccess = Items => {
   return {
     type: itemsConstants.edit_storeItem_success,
-    items,
+    Items,
   };
 };
 export const editStoreItemFail = () => {
@@ -59,14 +59,31 @@ export const removeStoreItemRequest = id => {
     id,
   };
 };
-export const removeStoreItemSuccess = items => {
+export const removeStoreItemSuccess = Items => {
   return {
     type: itemsConstants.delete_storeItem_success,
-    items,
+    Items,
   };
 };
 export const removeStoreItemFail = () => {
   return {
     type: itemsConstants.delete_storeItem_fail
+  };
+};
+//Fetching Logs
+export const fetchStoreLogsRequest = () => {
+  return {
+    type: itemsConstants.fetch_storeLogs
+  };
+};
+export const fetchStoreLogsSuccess = Logs => {
+  return {
+    type: itemsConstants.fetch_storeLogs_success,
+    Logs
+  };
+};
+export const fetchStoreLogsFail = () => {
+  return {
+    type: itemsConstants.fetch_storeLogs_fail,
   };
 };

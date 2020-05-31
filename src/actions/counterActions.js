@@ -6,10 +6,10 @@ export const couterItemsRequest = () => {
         type: counterConstants.fetch_counterItems,
     };
 };
-export const couterItemsSuccess = items => {
+export const couterItemsSuccess = Items => {
     return {
         type: counterConstants.fetch_counterItems_success,
-        items
+        Items
     };
 };
 export const couterItemsFailure = () => {
