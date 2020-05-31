@@ -16,7 +16,6 @@ export const itemsConstants = {
   fetch_storeLogs_success: "fetch_storelogs_successfull",
   fetch_storeLogs_fail: "fetch_storelogs_failure",
 };
-
 //Counter Constants
 export const counterConstants = {
   fetch_counterItems: "fetch_counterItems_request",

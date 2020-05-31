@@ -52,7 +52,7 @@ const Header = () => {
                     {/* Mobile View Toggler  [visible only after 768px screen]                         */}
                     {/*--------------------------------------------------------------------------------*/}
                     <button className="btn-link nav-toggler d-block d-md-none" onClick={() => showMobilemenu()}>
-                        <i className="ti-menu ti-close" />
+                        <i className="fa fa-list" />
                     </button>
                 </div>
                 <Collapse className="navbarbg" navbar data-navbarbg="skin1" >

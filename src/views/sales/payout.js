@@ -55,8 +55,7 @@ const Payout = () => {
         <Col sm="12" md="6">
           <Card>
             <CardHeader className="font-weight-bold">
-              <span className="float-left">!!! Cation !!!</span>
-              <span className="float-right">!!! Cation !!!</span>
+              <span className="float-left">Cation !!!</span>
             </CardHeader>
             <CardBody className="text-center">
               <CardTitle className="text-success">

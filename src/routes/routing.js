@@ -1,17 +1,7 @@
-import Starter from "../views/starter/starter.js";
-// ui components
 import Home from "../views/home";
 import Sales from "../views/sales";
 import Profits from "../views/profits";
 import Stock from "../views/stock";
-import Alerts from "../views/ui-components/alert.js";
-import Badges from "../views/ui-components/badge.js";
-import Buttons from "../views/ui-components/button.js";
-import Cards from "../views/ui-components/cards.js";
-import LayoutComponent from "../views/ui-components/layout.js";
-import PaginationComponent from "../views/ui-components/pagination.js";
-import PopoverComponent from "../views/ui-components/popover.js";
-import TooltipComponent from "../views/ui-components/tooltip.js";
 import StockLogs from "../views/stock/logs/index.js";
 import Profile from "../views/accounts/profile/index.js";
 import AddItem from "../views/items/index.js";
@@ -50,7 +40,7 @@ var ThemeRoutes = [
   {
     category: "Store",
     path: "/stock",
-    name: "Store/Store",
+    name: "Stock/Store",
     icon: "mdi mdi-arrange-send-backward",
     component: Stock
   },
@@ -83,58 +73,3 @@ var ThemeRoutes = [
   { path: "/", pathTo: "/dashboard", name: "Dashboard", redirect: true },
 ];
 export default ThemeRoutes;
-
-// {
-  //   path: "/home",
-  //   name: "Home",
-  //   icon: "ti-loop",
-  //   component: Starter,
-  // },
-  // {
-  //   path: "/alert",
-  //   name: "Alerts",
-  //   icon: "mdi mdi-comment-processing-outline",
-  //   component: Alerts,
-  // },
-  // {
-  //   path: "/badge",
-  //   name: "Badges",
-  //   icon: "mdi mdi-arrange-send-backward",
-  //   component: Badges,
-  // },
-  // {
-  //   path: "/button",
-  //   name: "Buttons",
-  //   icon: "mdi mdi-toggle-switch",
-  //   component: Buttons,
-  // },
-  // {
-  //   path: "/card",
-  //   name: "Cards",
-  //   icon: "mdi mdi-credit-card-multiple",
-  //   component: Cards,
-  // },
-  // {
-  //   path: "/grid",
-  //   name: "Grid",
-  //   icon: "mdi mdi-apps",
-  //   component: LayoutComponent,
-  // },
-  // {
-  //   path: "/pagination",
-  //   name: "Pagination",
-  //   icon: "mdi mdi-priority-high",
-  //   component: PaginationComponent,
-  // },
-  // {
-  //   path: "/popover",
-  //   name: "Popover",
-  //   icon: "mdi mdi-pencil-circle",
-  //   component: PopoverComponent,
-  // },
-  // {
-  //   path: "/ui-components/tooltip",
-  //   name: "Toltips",
-  //   icon: "mdi mdi-image-filter-vintage",
-  //   component: TooltipComponent,
-  // },

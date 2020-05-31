@@ -1,35 +1,9 @@
 @charset "UTF-8";
-/*
-Template Name: Admin Template
-Author: Niravjoshi / Wrappixel
-File: scss
-*/
-/**
- * Table Of Content
- *
- *  1. Color system
- *  2. Options
- *  3. Body
- *  4. Typography
- *  5. Breadcrumbs
- *  6. Cards
- *  7. Dropdowns
- *  8. Buttons
- *  9. Typography
- *  10. Progress bars
- *  11. Tables
- *  12. Forms
- *  14. Component
- */
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
 /*Theme Colors*/
 /*Topbar Colors*/
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
 @import 'all/icons/font-awesome/css/fontawesome-all.css';
-@import 'all/icons/simple-line-icons/css/simple-line-icons.css';
-@import 'all/icons/weather-icons/css/weather-icons.min.css';
-@import 'all/icons/themify-icons/themify-icons.css';
-@import 'all/icons/material-design-iconic-font/css/materialdesignicons.min.css';
 .topbar {
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.05);
@@ -62,92 +36,6 @@ File: scss
   -webkit-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
   -o-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
-}
-
-.login-container {
-  height: 100vh;
-}
-.login-container .row .login-row {
-  height: 100%;
-}
-
-.logos {
-  cursor: pointer !important;
-}
-
-.back-btn,
-.add-btn,
-.item-header {
-  width: max-content;
-}
-
-.form-control-alternative {
-  box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02) !important;
-  transition: box-shadow 0.15s ease !important;
-  border-radius: 0.3rem !important;
-  height: 50px !important;
-}
-
-.nav-wrapper {
-  padding: 1rem 0;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-}
-
-.nav-pills .nav-item:not(:last-child) {
-  padding-right: 1rem;
-}
-
-.nav-pills .nav-link {
-  padding: 0.75rem 1rem;
-  color: #5e72e4;
-  font-weight: 500;
-  font-size: 0.875rem;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-  background-color: #fff;
-  transition: all 0.15s ease;
-  border-radius: 0.3rem !important;
-}
-
-.pointed:hover {
-  cursor: pointer !important;
-}
-
-.errorInput {
-  border-bottom: 1px solid red !important;
-}
-
-.sm-font {
-  font-size: 12px !important;
-}
-
-.category {
-  font-size: 14px;
-  color: #8898aa;
-  margin: 25px 60px 10px 15px;
-  font-weight: bold;
-  width: 100%;
-  border-bottom: 0.1rem solid #eff1f3;
-}
-.category span {
-  margin-left: 10px;
-}
-
-.drop-items {
-  display: block;
-  width: 100%;
-  padding: 0.65rem 1rem;
-  clear: both;
-  font-weight: 400;
-  color: #212529;
-  text-align: inherit;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0;
-}
-
-.dropDown-menu-custom[style] {
-  transform: translate3d(0px, 30px, 0px) !important;
 }
 
 /*!
@@ -12205,6 +12093,96 @@ User Profile
 .create-btn {
   height: 40px;
   background: #32325d;
+}
+
+.login-container {
+  height: 100vh;
+}
+.login-container .row .login-row {
+  height: 100%;
+}
+
+.logos {
+  cursor: pointer !important;
+}
+
+.back-btn,
+.add-btn,
+.item-header {
+  width: max-content;
+}
+
+.form-control-alternative {
+  box-shadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02) !important;
+  transition: box-shadow 0.15s ease !important;
+  border-radius: 0.3rem !important;
+  height: 50px !important;
+}
+
+.nav-wrapper {
+  padding: 1rem 0;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.nav-pills .nav-item:not(:last-child) {
+  padding-right: 1rem;
+}
+
+.nav-pills .nav-link {
+  padding: 0.75rem 1rem;
+  color: #5e72e4;
+  font-weight: 500;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  transition: all 0.15s ease;
+  border-radius: 0.3rem !important;
+}
+
+.pointed:hover {
+  cursor: pointer !important;
+}
+
+.errorInput {
+  border-bottom: 1px solid red !important;
+}
+
+.sm-font {
+  font-size: 12px !important;
+}
+
+.font-13 {
+  font-size: 13px !important;
+}
+
+.category {
+  font-size: 14px;
+  color: #8898aa;
+  margin: 25px 60px 10px 15px;
+  font-weight: bold;
+  width: 100%;
+  border-bottom: 0.1rem solid #eff1f3;
+}
+.category span {
+  margin-left: 10px;
+}
+
+.drop-items {
+  display: block;
+  width: 100%;
+  padding: 0.65rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropDown-menu-custom[style] {
+  transform: translate3d(0px, 30px, 0px) !important;
 }
 
 /*# sourceMappingURL=style.css.map */
