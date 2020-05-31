@@ -15,6 +15,8 @@ const Profile = () => {
                                 <div className="mb-2">
                                     <img src={img2} alt="user" className="rounded-circle" height="200" width="200" />
                                 </div>
+                            </Col>
+                            <Col md="5" sm="12">
                                 <div className="mb-2 mt-4">
                                     <span>
                                         <strong>Name: </strong> Bryan Austin
@@ -22,39 +24,17 @@ const Profile = () => {
                                 </div>
                                 <div className="mb-2">
                                     <span>
-                                        <strong>Email: </strong> Bryan@austin.com
-                                    </span>
-                                </div>
-                            </Col>
-                            <Col md="5" sm="12">
-                                <div className="mb-2 mt-4">
-                                    <span>
                                         <strong>Place of Residence: </strong> Bryan Austin
                                     </span>
                                 </div>
-                                <div className="mb-2">
-                                    <span>
-                                        <strong>Contact: </strong> 0706444444
-                                    </span>
-                                </div>
                                 <div className="mb-2 mt-5 ml-4">
-                                    <h4>
-                                        <strong>Parents</strong>
-                                    </h4>
-                                </div>
-                                <div className="mb-2">
                                     <span>
-                                        <strong>Father's Name: </strong> Muzee
+                                        <strong>Contacts</strong>
                                     </span>
                                 </div>
                                 <div className="mb-2">
                                     <span>
-                                        <strong>Contact: </strong> 0706444444
-                                    </span>
-                                </div>
-                                <div className="mb-2">
-                                    <span>
-                                        <strong>Mother's Name: </strong> Mukyala Muzee
+                                        <strong>Email: </strong> Bryan@austin.com
                                     </span>
                                 </div>
                                 <div className="mb-2">

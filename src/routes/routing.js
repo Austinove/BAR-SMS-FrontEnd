@@ -16,6 +16,7 @@ import StockLogs from "../views/stock/logs/index.js";
 import Profile from "../views/accounts/profile/index.js";
 import AddItem from "../views/items/index.js";
 import AccountSetting from "../views/accounts/settings/index.js";
+import Expences from "../views/expences/index.js";
 
 var ThemeRoutes = [
   {
@@ -31,6 +32,13 @@ var ThemeRoutes = [
     name: "Sales",
     icon: "mdi mdi-arrange-send-backward",
     component: Sales,
+  },
+  {
+    category: "Counter",
+    path: "/businesses/expences",
+    name: "Expences",
+    icon: "fa fa-arrow-left",
+    component: Expences,
   },
   {
     category: "Store",
