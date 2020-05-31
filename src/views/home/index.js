@@ -34,8 +34,8 @@ class Home extends Component {
             <>
                 <Row>
                 {
-                    this.items.map(item => (
-                        <Item item={item} />
+                    this.items.map((item, index) => (
+                        <Item item={item} key={index} />
                     ))
                 }
                 </Row>
