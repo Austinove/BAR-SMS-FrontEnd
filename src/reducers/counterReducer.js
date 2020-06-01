@@ -22,23 +22,6 @@ export function counterReducer(state = initialState, action) {
                 ...state,
                 Loading: false
             };
-        case counterConstants.CD_to_counter:
-            return {
-                ...state,
-                Loading: true
-            };
-        case counterConstants.CD_to_counter_success:
-            return {
-                ...state,
-                counterItems: action.itemsData.counter,
-                storeItems: action.itemsData.store,
-                Loading: false
-            };
-        case counterConstants.CD_to_counter_fail:
-            return {
-                ...state,
-                Loading: false
-            };
         case counterConstants.make_sale:
             return {
                 ...state,

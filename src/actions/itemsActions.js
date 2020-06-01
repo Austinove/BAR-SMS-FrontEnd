@@ -105,3 +105,21 @@ export const fetchStoreLogsFail = () => {
     type: itemsConstants.fetch_storeLogs_fail,
   };
 };
+//Adding to counter
+export const CDCounterItemRequest = itemData => {
+  return {
+    type: itemsConstants.CD_to_counter,
+    itemData
+  }
+}
+export const CDCounterItemSuccess = itemsData => {
+  return {
+    type: itemsConstants.CD_to_counter_success,
+    itemsData
+  }
+}
+export const DCCounterItemFail = () => {
+  return {
+    type: itemsConstants.CD_to_counter_fail
+  }
+}

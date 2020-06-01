@@ -3,7 +3,7 @@ const initialState = {
     Loading: false,
     Expences: ""
 };
-export function profitsReducer(state = initialState, action) {
+export function expencesReducer(state = initialState, action) {
     switch (action.type) {
         case expencesConstants.fetch_expences:
             return {

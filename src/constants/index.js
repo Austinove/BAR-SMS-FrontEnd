@@ -18,15 +18,15 @@ export const itemsConstants = {
   fetch_storeLogs: "fetch_storelogs_request",
   fetch_storeLogs_success: "fetch_storelogs_successfull",
   fetch_storeLogs_fail: "fetch_storelogs_failure",
+  CD_to_counter: "add/remove_counterItem_request",
+  CD_to_counter_success: "add/remove_counterItem_successfull",
+  CD_to_counter_fail: "add/remove_counterItem_failure",
 };
 //Counter Constants
 export const counterConstants = {
   fetch_counterItems: "fetch_counterItems_request",
   fetch_counterItems_success: "fetch_counterItems_successfull",
   fetch_counterItems_fail: "fetch_counterItems_failure",
-  CD_to_counter: "add/remove_counterItem_request",
-  CD_to_counter_success: "add/remove_counterItem_successfull",
-  CD_to_counter_fail: "add/remove_counterItem_failure",
   make_sale: "make_sale_request",
   make_sale_success: "make_sale_successfull",
   make_sale_fail: "make_sale_failure"

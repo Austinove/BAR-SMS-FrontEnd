@@ -6,7 +6,7 @@ const initialState = {
     Items: [],
     Logs: []
 }
-export function itemReducer(state = initialState, action) {
+export function itemsReducer(state = initialState, action) {
     switch (action.type) {
         case itemsConstants.fetch_storeItems:
             return {
@@ -100,6 +100,22 @@ export function itemReducer(state = initialState, action) {
                 Loading: false
             };
         case itemsConstants.fetch_storeLogs_fail:
+            return {
+                ...state,
+                Loading: false
+            };
+        case itemsConstants.CD_to_counter:
+            return {
+                ...state,
+                Loading: true
+            };
+        case itemsConstants.CD_to_counter_success:
+            return {
+                ...state,
+                storeItems: action.itemsData,
+                Loading: false
+            };
+        case itemsConstants.CD_to_counter_fail:
             return {
                 ...state,
                 Loading: false

@@ -6,7 +6,8 @@ import {
     fetchStoreItemsSuccess, 
     addStoreItemSuccess, 
     editStoreItemSuccess, 
-    removeStoreItemSuccess
+    removeStoreItemSuccess,
+    CDCounterItemSuccess
 } from "../actions/itemsActions";
 
 function storeItems() {
@@ -27,6 +28,9 @@ function removeItem(){
 function storeLogs(){
     // yield put(fetchStoreLogsSuccess(Logs));
 }
+function CDItem(itemData){
+    // yield put(CDCounterItemSuccess(itemsData))
+}
 export function* storeItemsRequest() {
     yield takeEvery(itemsConstants.fetch_storeItems, storeItems)
 }
@@ -45,6 +49,9 @@ export function* removeItemRequest() {
 export function* storeLogsRequest() {
     yield takeEvery(itemsConstants.fetch_storeLogs, storeLogs)
 }
+export function* CDItemRequest() {
+    yield takeEvery(itemsConstants.CD_to_counter, CDItem);
+}
 export default function* rootSaga() {
     yield all([
         fork(storeItemsRequest),
@@ -52,6 +59,7 @@ export default function* rootSaga() {
         fork(createItemRequest),
         fork(editItemRequest),
         fork(removeItemRequest),
-        fork(storeLogsRequest)
+        fork(storeLogsRequest),
+        fork(CDItemRequest)
     ])
 }

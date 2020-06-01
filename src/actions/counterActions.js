@@ -17,24 +17,6 @@ export const counterItemsFailure = () => {
         type: counterConstants.fetch_counterItems_fail,
     };
 };
-//Adding
-export const CDCounterItemRequest = itemData => {
-    return {
-        type: counterConstants.CD_to_counter,
-        itemData
-    }
-}
-export const CDCounterItemSuccess = itemsData => {
-    return {
-        type: counterConstants.CD_to_counter_success,
-        itemsData
-    }
-}
-export const DCCounterItemFail = () => {
-    return {
-        type: counterConstants.CD_to_counter_fail
-    }
-}
 //Saling
 export const saleRequest = itemData => {
     return {
