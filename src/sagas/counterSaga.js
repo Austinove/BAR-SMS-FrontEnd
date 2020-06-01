@@ -23,7 +23,7 @@ export function* addItemRequest(){
 export function* removeItemRequest(){
     yield takeEvery(counterConstants.remove_from_counter, removeItem);
 }
-export function makeSaleRequest(){
+export function* makeSaleRequest(){
     yield takeEvery(counterConstants.make_sale, makeSale);
 }
 

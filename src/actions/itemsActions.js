@@ -16,10 +16,10 @@ export const fetchStoreItemsFail = () => {
     type: itemsConstants.fetch_storeItems_fail,
   };
 };
-//Creating
+//Adding to store
 export const addStoreItemRequest = itemData => {
   return {
-    type: itemsConstants.addStoreItem,
+    type: itemsConstants.add_storeItem,
     itemData
   };
 };
@@ -32,6 +32,24 @@ export const addStoreItemSuccess = Items => {
 export const addStoreItemFail = () => {
   return {
     type: itemsConstants.add_storeItem_fail
+  };
+};
+//Createing
+export const createStoreItemRequest = itemData => {
+  return {
+    type: itemsConstants.create_storeItem,
+    itemData
+  };
+};
+export const createStoreItemSuccess = Items => {
+  return {
+    type: itemsConstants.create_storeItem_success,
+    Items
+  };
+};
+export const createStoreItemFail = () => {
+  return {
+    type: itemsConstants.create_storeItem_fail
   };
 };
 //Editing

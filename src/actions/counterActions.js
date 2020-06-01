@@ -1,18 +1,18 @@
 import { counterConstants } from "../constants/index";
 
 //Fetching
-export const couterItemsRequest = () => {
+export const counterItemsRequest = () => {
     return {
         type: counterConstants.fetch_counterItems,
     };
 };
-export const couterItemsSuccess = Items => {
+export const counterItemsSuccess = Items => {
     return {
         type: counterConstants.fetch_counterItems_success,
         Items
     };
 };
-export const couterItemsFailure = () => {
+export const counterItemsFailure = () => {
     return {
         type: counterConstants.fetch_counterItems_fail,
     };
