@@ -18,39 +18,21 @@ export const counterItemsFailure = () => {
     };
 };
 //Adding
-export const addCounterItemRequest = itemData => {
+export const CDCounterItemRequest = itemData => {
     return {
-        type: counterConstants.add_to_counter,
+        type: counterConstants.CD_to_counter,
         itemData
     }
 }
-export const addCounterItemSuccess = itemData => {
+export const CDCounterItemSuccess = itemsData => {
     return {
-        type: counterConstants.add_to_counter_success,
-        itemData
+        type: counterConstants.CD_to_counter_success,
+        itemsData
     }
 }
-export const addCounterItemFail = () => {
+export const DCCounterItemFail = () => {
     return {
-        type: counterConstants.add_to_counter_fail
-    }
-}
-//Removing
-export const removeCounterItemRequest = itemData => {
-    return {
-        type: counterConstants.remove_from_counter,
-        itemData
-    }
-}
-export const removeCounterItemSuccess = itemData => {
-    return {
-        type: counterConstants.remove_from_counter_success,
-        itemData
-    }
-}
-export const removeCounterItemFail = () => {
-    return {
-        type: counterConstants.remove_from_counter_fail
+        type: counterConstants.CD_to_counter_fail
     }
 }
 //Saling
@@ -60,10 +42,10 @@ export const saleRequest = itemData => {
         itemData
     }
 }
-export const saleSuccess = itemData => {
+export const saleSuccess = itemsData => {
     return {
         type: counterConstants.make_sale_success,
-        itemData
+        itemsData
     }
 }
 export const saleFail = () => {
