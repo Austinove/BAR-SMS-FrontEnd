@@ -1,5 +1,5 @@
 //Reading
-export const fechData = (url, token) => {
+export const fetchData = (url, token) => {
     const reqHeaders;
     token ?
     reqHeaders = {
