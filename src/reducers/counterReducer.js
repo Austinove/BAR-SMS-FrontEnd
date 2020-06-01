@@ -4,7 +4,7 @@ const initialState = {
     counterItems: [],
     storeItems: [],
 };
-export function counter(state = initialState, action) {
+export function counterReducer(state = initialState, action) {
     switch (action.type) {
         case counterConstants.fetch_counterItems:
             return {

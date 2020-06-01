@@ -5,7 +5,7 @@ const initialState = {
     Loading: false,
 };
 
-export function auth(state = initialState, action) {
+export function authReducer(state = initialState, action) {
     switch (action.type) {
         case userConstants.login_user:
             return {

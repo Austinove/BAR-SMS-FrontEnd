@@ -6,9 +6,10 @@ export const paidRequest = salesDate => {
         salesDate
     };
 };
-export const paidSuccess = () => {
+export const paidSuccess = paidData => {
     return {
-        type: paidConstants.paid_success
+        type: paidConstants.paid_success,
+        paidData
     };
 };
 export const paidFail = () => {
