@@ -4,9 +4,35 @@ import {
     counterItemsSuccess,  
     saleSuccess
 } from "../actions/counterActions";
+const items = [
+    {
+        name: "Nile Special",
+        quantity: 340,
+    },
+    {
+        name: "Nile Special",
+        quantity: 34,
+    },
+    {
+        name: "Nile Special",
+        quantity: 39,
+    },
+    {
+        name: "Nile Special",
+        quantity: 40,
+    },
+    {
+        name: "Nile Special",
+        quantity: 100,
+    },
+    {
+        name: "Nile Special",
+        quantity: 90,
+    }
+]
 
 function* fetchItems(){
-    // yield put(counterItemsSuccess(Items));
+    yield put(counterItemsSuccess(items));
 }
 function* makeSale(itemData){
     // yield put(saleSuccess(itemData));

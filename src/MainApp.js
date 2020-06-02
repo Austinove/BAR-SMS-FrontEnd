@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
@@ -13,12 +13,9 @@ const MainApp = () => {
         <Provider store = {store}>
             <ConnectedRouter history={history}>
                 <Switch>
-                    {/* {indexRoutes.map((prop, key) => {
-                        return <Route path={prop.path} key={key} component={prop.component} />;
-                    })} */}
                     {!test ?
-                    <Route path="/" component= {Fulllayout} />:
-                    <Route path="/login" exact component={Login} />};
+                    <Route path="/" component= {Fulllayout} />
+                    :<Route path="/login" exact component={Login} />};
                 </Switch>
             </ConnectedRouter>
         </Provider>

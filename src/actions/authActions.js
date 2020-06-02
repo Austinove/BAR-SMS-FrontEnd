@@ -44,8 +44,7 @@ export const registerUserSuccess = Users => {
 };
 export const registerUserFail = () => {
   return {
-    type: userConstants.register_user_fail,
-    User,
+    type: userConstants.register_user_fail
   };
 };
 //Editing

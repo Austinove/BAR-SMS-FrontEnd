@@ -1,46 +1,38 @@
 import React, { Component } from "react";
 import { Row} from "reactstrap";
+import { connect } from "react-redux";
 import Item from "./item";
+import { counterItemsRequest } from "../../actions/counterActions";
 
 class Home extends Component {
-    items = [
-        {
-            name: "Nile Special",
-            quantity: 340,
-        },
-        {
-            name: "Nile Special",
-            quantity: 34,
-        },
-        {
-            name: "Nile Special",
-            quantity: 39,
-        },
-        {
-            name: "Nile Special",
-            quantity: 40,
-        },
-        {
-            name: "Nile Special",
-            quantity: 100,
-        },
-        {
-            name: "Nile Special",
-            quantity: 90,
-        }
-    ]
+    componentDidMount(){
+        this.props.counterItemsRequest();
+    }
     render() {
         return (
             <>
-                <Row>
-                {
-                    this.items.map((item, index) => (
-                        <Item item={item} key={index} />
-                    ))
-                }
-                </Row>
+                {this.props.Loading ? (
+                    <div className="text-primary">
+                        <strong className=" font-20">Loading.....</strong>
+                    </div>
+                ):(
+                    <Row>
+                        {
+                            this.props.counterItems.map((item, index) => (
+                                <Item item={item} key={index} />
+                            ))
+                        }
+                    </Row>
+                )}
             </>
         )
     }
 }
-export default Home;
+const mapStateToProps = ({ counter }) =>{
+    const { Loading, counterItems } = counter;
+    return {
+        Loading,
+        counterItems
+    }
+}
+export default connect(mapStateToProps, { counterItemsRequest })(Home);

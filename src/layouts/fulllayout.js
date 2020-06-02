@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../components/header/header.js';
 import Sidebar from '../components/sidebar/sidebar.js';
@@ -73,7 +73,13 @@ const Fulllayout = (props) => {
             {/*--------------------------------------------------------------------------------*/}
             <div className="page-wrapper d-block">
                 <div className="page-content container-fluid">
+                    <Suspense fallback={
+                        <div className="text-primary">
+                            <strong className=" font-20">Loading.....</strong>
+                        </div>
+                        }>
                     <Switch>
+                        
                         {ThemeRoutes.map((prop, key) => {
                             if (prop.redirect) {
                                 return <Redirect from={prop.path} to={prop.pathTo} key={key} />;
@@ -84,7 +90,9 @@ const Fulllayout = (props) => {
                                 );
                             }
                         })}
+                        
                     </Switch>
+                    </Suspense>
                 </div>
                 <Footer />
             </div>

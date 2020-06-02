@@ -2,7 +2,6 @@ import { counterConstants } from "../constants";
 const initialState = {
     Loading: false,
     counterItems: [],
-    storeItems: [],
 };
 export function counterReducer(state = initialState, action) {
     switch (action.type) {

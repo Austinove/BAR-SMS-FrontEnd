@@ -1,12 +1,15 @@
-import Home from "../views/home";
-import Sales from "../views/sales";
-import Profits from "../views/profits";
-import Stock from "../views/stock";
-import StockLogs from "../views/stock/logs/index.js";
-import Profile from "../views/accounts/profile/index.js";
-import AddItem from "../views/items/index.js";
-import AccountSetting from "../views/accounts/settings/index.js";
-import Expences from "../views/expences/index.js";
+import { lazy } from "react";
+import { withRouter } from "react-router-dom";
+// import Home from "../views/home";
+const Sales = withRouter(lazy(() => import( "../views/sales")))
+const Profits = withRouter(lazy(() => import( "../views/profits")))
+const Stock = withRouter(lazy(() => import( "../views/stock")))
+const StockLogs = withRouter(lazy(() => import( "../views/stock/logs/index.js")))
+const Profile = withRouter(lazy(() => import( "../views/accounts/profile/index.js")))
+const AddItem = withRouter(lazy(() => import( "../views/items/index.js")))
+const AccountSetting = withRouter(lazy(() => import( "../views/accounts/settings/index.js")))
+const Expences = withRouter(lazy(() => import( "../views/expences/index.js")))
+const Home = withRouter(lazy(() => import("../views/home")));
 
 var ThemeRoutes = [
   {
