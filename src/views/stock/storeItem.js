@@ -79,7 +79,7 @@ const StoreItem = (props) => {
                         btn_icon="fa fa-plus-circle"
                         modelTitle="Add Items to Counter"
                         subLabel="Add Item"
-                      />
+                      /> 
                     </div>
                     <div className="drop-items">
                       <SalesModal

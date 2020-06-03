@@ -8,26 +8,32 @@ const items = [
     {
         name: "Nile Special",
         quantity: 340,
+        id: 1
     },
     {
         name: "Nile Special",
         quantity: 34,
+        id: 2
     },
     {
         name: "Nile Special",
         quantity: 39,
+        id: 3
     },
     {
         name: "Nile Special",
         quantity: 40,
+        id: 4
     },
     {
         name: "Nile Special",
         quantity: 100,
+        id: 5
     },
     {
         name: "Nile Special",
         quantity: 90,
+        id: 6
     }
 ]
 
@@ -35,7 +41,7 @@ function* fetchItems(){
     yield put(counterItemsSuccess(items));
 }
 function* makeSale(itemData){
-    // yield put(saleSuccess(itemData));
+    yield put(saleSuccess(items));
 }
 export function* itemsRequest(){
     yield takeEvery(counterConstants.fetch_counterItems, fetchItems);

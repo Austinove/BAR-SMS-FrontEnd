@@ -8,6 +8,9 @@ class Home extends Component {
     componentDidMount(){
         this.props.counterItemsRequest();
     }
+    // componentDidUpdate(){
+    //     this.props.counterItemsRequest();
+    // }
     render() {
         return (
             <>

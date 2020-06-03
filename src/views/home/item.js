@@ -46,6 +46,7 @@ const Item = (props) => {
                 btn_icon="fa fa-shopping-bag mr-2"
                 modelTitle="Make Sale from Counter"
                 subLabel="Submit Sale"
+                itemId ={item.id}
               />
             </div>
           </CardBody>
