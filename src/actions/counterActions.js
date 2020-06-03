@@ -35,3 +35,20 @@ export const saleFail = () => {
         type: counterConstants.make_sale_fail
     }
 }
+//fetch sales
+export const fetchSales = () => {
+    return {
+        type: counterConstants.fetch_sales
+    };
+};
+export const fetchSalesSuccess = Sales => {
+    return {
+        type: counterConstants.fetch_sales_success,
+        Sales
+    };
+};
+export const fetchSalesFail = () => {
+    return {
+        type: counterConstants.fetch_sales_fail
+    };
+};

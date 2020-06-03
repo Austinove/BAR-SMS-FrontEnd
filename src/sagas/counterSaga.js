@@ -2,7 +2,8 @@ import { counterConstants } from "../constants";
 import {all, fork, put, takeEvery } from "redux-saga/effects";
 import { 
     counterItemsSuccess,  
-    saleSuccess
+    saleSuccess,
+    fetchSalesSuccess
 } from "../actions/counterActions";
 const items = [
     {
@@ -35,8 +36,52 @@ const items = [
         quantity: 90,
         id: 6
     }
-]
-
+];
+const Sales = [
+    {
+        name: "Nile Special",
+        counter: 35,
+        present: 10,
+        sold: 15,
+        price: 2000,
+        amount: 30000,
+    },
+    {
+        name: "Nile Special",
+        counter: 35,
+        present: 10,
+        sold: 15,
+        price: 2000,
+        amount: 30000,
+    },
+    {
+        name: "Nile Special",
+        counter: 35,
+        present: 10,
+        sold: 15,
+        price: 2000,
+        amount: 30000,
+    },
+    {
+        name: "Nile Special",
+        counter: 35,
+        present: 10,
+        sold: 15,
+        price: 2000,
+        amount: 30000,
+    },
+    {
+        name: "Nile Special",
+        counter: 35,
+        present: 10,
+        sold: 15,
+        price: 2000,
+        amount: 30000,
+    },
+];
+function* fetchSales(){
+    yield put(fetchSalesSuccess(Sales));
+}
 function* fetchItems(){
     yield put(counterItemsSuccess(items));
 }
@@ -49,10 +94,14 @@ export function* itemsRequest(){
 export function* makeSaleRequest(){
     yield takeEvery(counterConstants.make_sale, makeSale);
 }
+export function* fetchSalesRequet(){
+    yield takeEvery(counterConstants.fetch_sales, fetchSales);
+}
 
 export default function* rootSaga(){
     yield all([
         fork(itemsRequest),
-        fork(makeSaleRequest)
+        fork(makeSaleRequest),
+        fork(fetchSalesRequet)
     ])
 }

@@ -150,7 +150,7 @@ const mapStateToProps = ({ counter, storeData }) => {
     counterItems,
     storeItems
   };
-}
+};
 
 export default connect(
   mapStateToProps,

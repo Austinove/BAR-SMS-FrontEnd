@@ -29,7 +29,10 @@ export const counterConstants = {
   fetch_counterItems_fail: "fetch_counterItems_failure",
   make_sale: "make_sale_request",
   make_sale_success: "make_sale_successfull",
-  make_sale_fail: "make_sale_failure"
+  make_sale_fail: "make_sale_failure",
+  fetch_sales: "fetch_sales_request",
+  fetch_sales_success: "fetch_sales_success",
+  fetch_sales_fail: "fetch_sales_failure"
 };
 //User Constants
 export const userConstants = {

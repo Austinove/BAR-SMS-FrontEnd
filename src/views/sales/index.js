@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDatetime from "react-datetime";
-import SaleDetails from "./salesDetails.js";
-import Payout from "./payout";
+import { connect } from "react-redux";
 import { 
     Card,
     CardBody,
@@ -13,8 +12,16 @@ import {
     InputGroupAddon,
     Input
  } from "reactstrap"
+import { fetchSales } from "../../actions/counterActions";
+import SaleDetails from "./salesDetails.js";
+import Payout from "./payout";
+import Loader from '../view-elements/loader';
 
-const Sales = () => {
+const Sales = (props) => {
+    useEffect(() => {
+        props.fetchSales();
+    },[props.Sales]);
+    const { Sales } = props;
     return (
         <Card>
             <CardBody>
@@ -25,32 +32,30 @@ const Sales = () => {
                     </div>
                     <div className="ml-auto d-flex no-block align-items-center">
                         <div className="dl">
-                            {/* <Input type="select" className="custom-select">
-                                <option value="0">Monthly</option>
-                                <option value="1">Daily</option>
-                                <option value="2">Weekly</option>
-                                <option value="3">Yearly</option>
-                            </Input> */}
                             <FormGroup>
                                 <InputGroup className="input-group-alternative">
                                     <InputGroupAddon addonType="prepend">
                                         <InputGroupText>
                                             <i className="ni ni-calendar-grid-58" />
-                                        </InputGroupText> 
+                                        </InputGroupText>
                                     </InputGroupAddon>
-                                    <Input 
-                                        type="date"
-                                    />
+                                    <Input type="date" />
                                 </InputGroup>
                             </FormGroup>
                         </div>
                     </div>
                 </div>
-                <SaleDetails />
+                <SaleDetails salesDetails={Sales}/>
                 <Payout />
             </CardBody>
         </Card >
     )
 }
+const mapStateToProps = ({ counter }) => {
+    const { Sales } = counter;
+    return {
+        Sales
+    };
+};
 
-export default Sales;
+export default connect(mapStateToProps, { fetchSales })(Sales);

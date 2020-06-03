@@ -2,6 +2,7 @@ import { counterConstants } from "../constants";
 const initialState = {
     Loading: false,
     counterItems: [],
+    Sales: []
 };
 export function counterReducer(state = initialState, action) {
     switch (action.type) {
@@ -33,6 +34,22 @@ export function counterReducer(state = initialState, action) {
                 Loading: false
             };
         case counterConstants.make_sale_fail:
+            return {
+                ...state,
+                Loading: false
+            };
+        case counterConstants.fetch_sales:
+            return {
+                ...state,
+                Loading: true
+            };
+        case counterConstants.fetch_sales_success:
+            return {
+                ...state,
+                Sales: action.Sales,
+                Loading: false
+            };
+        case counterConstants.fetch_sales_fail:
             return {
                 ...state,
                 Loading: false

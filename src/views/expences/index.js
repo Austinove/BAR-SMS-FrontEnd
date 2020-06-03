@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     Container,
     Row,
@@ -13,19 +13,15 @@ import {
 } from 'reactstrap'
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { connect } from "react-redux";
+import { fetchExpencesRequest } from "../../actions/expencesActions";
 import ExpencesDetails from './expences'
 
-const Expences = () => {
-    const expenceData = [
-        {
-            desc: "This was spent on food",
-            amount: 5000
-        },
-        {
-            desc: "Taken home by a family member called Austin",
-            amount: 10000
-        }
-    ]
+const Expences = (props) => {
+    const { Expences, Loading } = props;
+    useEffect(() => {
+        props.fetchExpencesRequest();
+    }, [Expences]);
     return (
         <Container>
             <Card>
@@ -104,9 +100,13 @@ const Expences = () => {
                     </Formik>
                 </CardBody>
             </Card>
-            <ExpencesDetails expenceData={expenceData} />
+            <ExpencesDetails expenceData={Expences} />
         </Container>
     )
 }
+const mapStateToProps = ({ expences }) => {
+    const { Expences, Loading } = expences;
+    return { Expences, Loading};
+}
 
-export default Expences
+export default connect(mapStateToProps, { fetchExpencesRequest })(Expences)
