@@ -23,16 +23,23 @@ import {
 import { Simpleloader } from "../view-elements/loader";
 
 const ItemForms = (props) => {
-  const { editFlag, item, toggle, Loading } = props;
+  const {
+    editFlag, 
+    item, 
+    toggle, 
+    Loading, 
+    addNewItem, 
+    editSelectedItem 
+  } = props;
   const submitForms = (editFlag, itemData) => {
     console.log(itemData);
     switch (editFlag) {
       case true:
-        props.editStoreItemRequest(itemData);
+        editSelectedItem(itemData);
         toggle()
         break;
       case false:
-        props.createStoreItemRequest(itemData);
+        addNewItem(itemData);
         toggle()
         break;
       default:
@@ -191,7 +198,7 @@ const ItemForms = (props) => {
                 <Row>
                   <Col md="6">
                     <FormGroup className="has-success">
-                      
+
                       <Button type="submit" disabled={Loading} color="success" size="md">
                         <i className="fa fa-plus-circle"></i> Add Item
                         </Button>

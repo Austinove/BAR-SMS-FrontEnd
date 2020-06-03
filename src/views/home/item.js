@@ -1,9 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Card, CardBody, Row, CardTitle, Col, Progress } from "reactstrap";
 import SalesModal from "../view-elements/modal/salesModal";
+import { saleRequest } from "../../actions/counterActions";
 
 const Item = (props) => {
-  const { item } = props;
+  const { item, makeSale } = props;
   return (
     <Col className="mb-2" xs="12" lg="4" md="4">
       <div style={{ width: "18rem" }}>
@@ -47,6 +49,7 @@ const Item = (props) => {
                 modelTitle="Make Sale from Counter"
                 subLabel="Submit Sale"
                 itemId={item.id}
+                modalTask={makeSale}
               />
             </div>
           </CardBody>
@@ -55,5 +58,7 @@ const Item = (props) => {
     </Col>
   );
 };
-
-export default Item;
+const mapStateToProps = (state) => {
+  return {}
+}
+export default connect(mapStateToProps, {saleRequest})(Item);

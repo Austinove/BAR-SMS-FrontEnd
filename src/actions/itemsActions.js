@@ -53,10 +53,10 @@ export const createStoreItemFail = () => {
   };
 };
 //Editing
-export const editStoreItemRequest = id => {
+export const editStoreItemRequest = itemData => {
   return {
     type: itemsConstants.edit_storeItem,
-    id,
+    itemData,
   };
 };
 export const editStoreItemSuccess = Items => {

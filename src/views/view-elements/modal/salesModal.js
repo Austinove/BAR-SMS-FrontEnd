@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
 import {
   Button,
   Modal,
@@ -14,8 +13,6 @@ import {
 } from "reactstrap";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { saleRequest } from "../../../actions/counterActions";
-import { addStoreItemRequest, CDCounterItemRequest } from "../../../actions/itemsActions"
 
 const SalesModal = (props) => {
   const {
@@ -35,26 +32,6 @@ const SalesModal = (props) => {
       {buttonLabel}
     </span>
   );
-  const modalSubmition = (itemData) => {
-    switch (subLabel) {
-      case "Submit Sale":
-        props.saleRequest(itemData);
-        break;
-      case "Add to Store":
-        console.log(itemData, "second->add Store");
-        break;
-      case "Add Item":
-        console.log(itemData, "third ->add Item")
-        break;
-      case "Remove Item":
-        console.log(itemData, "fif->remove item");
-        break;
-    
-      default:
-        break;
-    }
-    
-  }
   return (
     <div>
       {subLabel === "Submit Sale" ? (
@@ -95,7 +72,8 @@ const SalesModal = (props) => {
                   id: itemId,
                   itemQuantity: values.itemQuantity
                 }
-                modalSubmition(itemData);
+                props.modalTask(itemData);
+                toggle();
                 setSubmitting(false);
               }, 400);
             }}
@@ -142,21 +120,4 @@ const SalesModal = (props) => {
     </div>
   );
 };
-
-const mapStateToProps = ({ counter, storeData }) => {
-  const { counterItems } = counter;
-  const { storeItems } = storeData;
-  return {
-    counterItems,
-    storeItems
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  {
-    saleRequest,
-    addStoreItemRequest,
-    CDCounterItemRequest
-  }
-)(SalesModal);
+export default SalesModal;

@@ -13,6 +13,8 @@ import ItemForms from "./itemForms";
 import {
   fetchStoreItemsRequest,
   removeStoreItemRequest,
+  createStoreItemRequest,
+  editStoreItemRequest
 } from "../../actions/itemsActions";
 import { Simpleloader } from "../view-elements/loader";
 
@@ -34,10 +36,24 @@ const AddItem = (props) => {
   useEffect(() => {
     props.fetchStoreItemsRequest()
   }, [storeItems]);
+  const addNewItem = (itemData) => {
+    console.log(itemData);
+    props.createStoreItemRequest(itemData);
+  }
+  const editSelectedItem = (itemData) => {
+    console.log(itemData)
+    props.editStoreItemRequest(itemData);
+  }
   return (
     <div>
       {index ? (
-        <ItemForms editFlag={editFlag} item={item} toggle={toggle} />
+        <ItemForms 
+        addNewItem = {addNewItem}
+        editSelectedItem={editSelectedItem}
+        editFlag={editFlag} 
+        item={item} 
+        toggle={toggle} 
+        />
       ) : (
           <Container>
             <Row>
@@ -117,4 +133,6 @@ const mapStateToProps = ({ storeData }) => {
 export default connect(mapStateToProps, {
   fetchStoreItemsRequest,
   removeStoreItemRequest,
+  createStoreItemRequest,
+  editStoreItemRequest
 })(AddItem);
