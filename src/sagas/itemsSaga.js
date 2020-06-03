@@ -1,7 +1,7 @@
 import { all, fork, put, takeEvery } from "redux-saga/effects";
 import { itemsConstants } from "../constants";
 import { 
-    createStoreItemRequest, 
+    createStoreItemSuccess, 
     fetchStoreLogsSuccess, 
     fetchStoreItemsSuccess, 
     addStoreItemSuccess, 
@@ -74,7 +74,7 @@ const Items = [
     crateSize: 25,
   },
   {
-    name: "Nile Special",
+    name: "Nile",
     quantity: 500,
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
@@ -95,11 +95,11 @@ function* storeItems() {
 function* addItem() {
     // yield put(addStoreItemSuccess(Items));
 }
-function* createItem() {
-    // yield put(createStoreItemRequest(itemData));
+function* createItem(itemData) {
+    yield put(createStoreItemSuccess(Items));
 }
-function* editItem() {
-    // yield put(editStoreItemSuccess(Items));
+function* editItem(itemData) {
+    yield put(editStoreItemSuccess(Items));
 }
 function* removeItem(){
     // yield put(removeStoreItemSuccess(Items));

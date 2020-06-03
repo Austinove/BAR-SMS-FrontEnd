@@ -48,7 +48,7 @@ export function itemsReducer(state = initialState, action) {
             return {
                 ...state,
                 storeItems: action.Items,
-                Loading: false
+                Loading: false,
             };
         case itemsConstants.create_storeItem_fail:
             return {
@@ -64,7 +64,7 @@ export function itemsReducer(state = initialState, action) {
             return {
                 ...state,
                 storeItems: action.Items,
-                Loading: false
+                Loading: false,
             };
         case itemsConstants.edit_storeItem_fail:
             return {

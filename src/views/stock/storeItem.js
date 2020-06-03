@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import {
   Col,
   Card,
@@ -10,7 +12,8 @@ import {
   DropdownMenu,
 } from "reactstrap";
 import SalesModal from "../view-elements/modal/salesModal";
-import { Link } from "react-router-dom";
+import { addStoreItemRequest } from "../../actions/itemsActions";
+
 
 const StoreItem = (props) => {
   const { item } = props;

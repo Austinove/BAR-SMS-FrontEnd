@@ -20,12 +20,15 @@ const AddItem = (props) => {
   const { Loading, storeItems } = props;
   const [index, setindex] = useState(props.index);
   const [item, setitem] = useState();
+  const [editFlag, seteditFlag] = useState(false);
   const toggle = () => {
     setindex(!index);
     setitem("");
+    seteditFlag(false)
   };
   const editItem = (item) => {
     setitem(item);
+    seteditFlag(true)
     setindex(!index);
   };
   useEffect(() => {
@@ -34,7 +37,7 @@ const AddItem = (props) => {
   return (
     <div>
       {index ? (
-        <ItemForms item={item} toggle={toggle} />
+        <ItemForms editFlag={editFlag} item={item} toggle={toggle} />
       ) : (
           <Container>
             <Row>
