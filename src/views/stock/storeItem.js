@@ -8,7 +8,6 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
 } from "reactstrap";
 import SalesModal from "../view-elements/modal/salesModal";
 import { Link } from "react-router-dom";
@@ -79,7 +78,7 @@ const StoreItem = (props) => {
                         btn_icon="fa fa-plus-circle"
                         modelTitle="Add Items to Counter"
                         subLabel="Add Item"
-                      /> 
+                      />
                     </div>
                     <div className="drop-items">
                       <SalesModal

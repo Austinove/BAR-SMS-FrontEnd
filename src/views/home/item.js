@@ -1,15 +1,13 @@
 import React from "react";
 import { Card, CardBody, Row, CardTitle, Col, Progress } from "reactstrap";
 import SalesModal from "../view-elements/modal/salesModal";
-import { Simpleloader } from "../view-elements/loader";
 
 const Item = (props) => {
   const { item } = props;
   return (
     <Col className="mb-2" xs="12" lg="4" md="4">
       <div style={{ width: "18rem" }}>
-        {item ? (
-          <Card className="card-stats mb-4 mb-lg-0">
+        <Card className="card-stats mb-4 mb-lg-0">
           <CardBody>
             <Row>
               <div className="col">
@@ -48,13 +46,11 @@ const Item = (props) => {
                 btn_icon="fa fa-shopping-bag mr-2"
                 modelTitle="Make Sale from Counter"
                 subLabel="Submit Sale"
-                itemId ={item.id}
+                itemId={item.id}
               />
             </div>
           </CardBody>
         </Card>
-        ) : (<Simpleloader />)}
-        
       </div>
     </Col>
   );

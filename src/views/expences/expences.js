@@ -10,7 +10,6 @@ import {
 import{ Simpleloader } from '../view-elements/loader';
 
 const ExpencesDetails = ({ expenceData }) => {
-    console.log(expenceData);
     return (
         <Card>
             <CardBody>
@@ -22,13 +21,13 @@ const ExpencesDetails = ({ expenceData }) => {
                 </Row>
                 <Table className="no-wrap v-middle" responsive>
                     <tbody>
-                        {expenceData? expenceData.map((expence, index) => (
+                        {expenceData && expenceData.map((expence, index) => (
                             <tr key={index}>
                                 <td>{index}</td>
                                 <td>{expence.desc}</td>
                                 <td className="blue-grey-text  text-darken-4 font-medium">{expence.amount}</td>
                             </tr>
-                        )): <Simpleloader />}
+                        ))}
                     </tbody>
                 </Table>
             </CardBody>

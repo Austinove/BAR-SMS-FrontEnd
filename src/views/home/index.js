@@ -3,6 +3,7 @@ import { Row } from "reactstrap";
 import { connect } from "react-redux";
 import Item from "./item";
 import { counterItemsRequest } from "../../actions/counterActions";
+import { Simpleloader } from "../view-elements/loader";
 
 class Home extends Component {
   componentDidMount() {
@@ -12,9 +13,15 @@ class Home extends Component {
     return (
       <>
         <Row>
-          {this.props.counterItems.map((item, index) => (
-            <Item item={item} key={index} />
-          ))}
+          {this.props.Loading ? (
+            <div className="full-width">
+              <Simpleloader />
+            </div>
+          ) : (
+            this.props.counterItems.map((item, index) => (
+              <Item item={item} key={index} />
+            ))
+          )}
         </Row>
       </>
     );

@@ -12,29 +12,54 @@ const items = [
         id: 1
     },
     {
-        name: "Nile Special",
+        name: "Sminof",
         quantity: 34,
         id: 2
     },
     {
-        name: "Nile Special",
+        name: "Pepsi",
         quantity: 39,
         id: 3
     },
     {
-        name: "Nile Special",
+        name: "Rock Boom",
         quantity: 40,
         id: 4
     },
     {
-        name: "Nile Special",
+        name: "Sting",
         quantity: 100,
         id: 5
     },
     {
-        name: "Nile Special",
+        name: "Pilsna",
         quantity: 90,
         id: 6
+    },
+    {
+        name: "Coca Cola",
+        quantity: 340,
+        id: 1
+    },
+    {
+        name: "Milinda",
+        quantity: 34,
+        id: 2
+    },
+    {
+        name: "Minute Mid",
+        quantity: 39,
+        id: 3
+    },
+    {
+        name: "Fanta",
+        quantity: 40,
+        id: 4
+    },
+    {
+        name: "Novida",
+        quantity: 100,
+        id: 5
     }
 ];
 const Sales = [
@@ -47,7 +72,23 @@ const Sales = [
         amount: 30000,
     },
     {
-        name: "Nile Special",
+        name: "Pilsnar",
+        counter: 35,
+        present: 10,
+        sold: 15,
+        price: 2000,
+        amount: 30000,
+    },
+    {
+        name: "Bell",
+        counter: 35,
+        present: 10,
+        sold: 15,
+        price: 2000,
+        amount: 30000,
+    },
+    {
+        name: "Sminof",
         counter: 35,
         present: 10,
         sold: 15,
@@ -63,7 +104,7 @@ const Sales = [
         amount: 30000,
     },
     {
-        name: "Nile Special",
+        name: "Pilsnar",
         counter: 35,
         present: 10,
         sold: 15,
@@ -71,7 +112,7 @@ const Sales = [
         amount: 30000,
     },
     {
-        name: "Nile Special",
+        name: "Bell",
         counter: 35,
         present: 10,
         sold: 15,

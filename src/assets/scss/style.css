@@ -12181,8 +12181,8 @@ User Profile
   border: 0;
 }
 
-.dropDown-menu-custom[style] {
-  transform: translate3d(0px, 30px, 0px) !important;
+.full-width {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

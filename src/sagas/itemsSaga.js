@@ -9,26 +9,105 @@ import {
     removeStoreItemSuccess,
     CDCounterItemSuccess
 } from "../actions/itemsActions";
+const Items = [
+  {
+    name: "Bell",
+    quantity: 100,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3500,
+    crateSize: 25
+  },
+  {
+    name: "Pepsi",
+    quantity: 500,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3500,
+    crateSize: 25
+  },
+  {
+    name: "CocaCola",
+    quantity: 300,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3500,
+    crateSize: 25
+  },
+  {
+    name: "Nile Special",
+    quantity: 450,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3500,
+    crateSize: 25
+  },
+  {
+    name: "CocaCola",
+    quantity: 300,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3500,
+    crateSize: 25
+  },
+  {
+    name: "Nile Special",
+    quantity: 450,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3500,
+    crateSize: 25
+  },
+  {
+    name: "Nile Special",
+    quantity: 500,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3500,
+    crateSize: 25,
+  },
+  {
+    name: "Pilsnar",
+    quantity: 500,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3000,
+    crateSize: 20,
+  },
+  {
+    name: "Tusker",
+    quantity: 500,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3200,
+    crateSize: 25,
+  },
+  {
+    name: "Nile Special",
+    quantity: 500,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3500,
+    crateSize: 20,
+  },
+  {
+    name: "Nile Special",
+    quantity: 500,
+    manufacturer: "Nile Manufactures LTD",
+    price: 3500,
+    crateSize: 25,
+  },
+];
 
-function storeItems() {
-    // yield put(fetchStoreItemsSuccess(Items));
+function* storeItems() {
+    yield put(fetchStoreItemsSuccess(Items));
 }
-function addItem() {
+function* addItem() {
     // yield put(addStoreItemSuccess(Items));
 }
-function createItem() {
+function* createItem() {
     // yield put(createStoreItemRequest(itemData));
 }
-function editItem() {
+function* editItem() {
     // yield put(editStoreItemSuccess(Items));
 }
-function removeItem(){
+function* removeItem(){
     // yield put(removeStoreItemSuccess(Items));
 }
-function storeLogs(){
+function* storeLogs(){
     // yield put(fetchStoreLogsSuccess(Logs));
 }
-function CDItem(itemData){
+function* CDItem(itemData){
     // yield put(CDCounterItemSuccess(itemsData))
 }
 export function* storeItemsRequest() {

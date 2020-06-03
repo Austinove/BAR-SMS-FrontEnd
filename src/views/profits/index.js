@@ -6,7 +6,7 @@ import { fetchProfitsDataRequest } from "../../actions/profitsActions";
 import { Simpleloader } from "../view-elements/loader";
 
 const Profits = (props) => {
-    const { profitsData } = props
+  const { profitsData, Loading } = props;
   //Line chart
   let lineData = {
     labels: [
@@ -35,7 +35,7 @@ const Profits = (props) => {
     ],
   };
   useEffect(() => {
-      props.fetchProfitsDataRequest();
+    props.fetchProfitsDataRequest();
   }, [profitsData]);
   return (
     <>
@@ -61,17 +61,19 @@ const Profits = (props) => {
             </div>
           </div>
           <Row>
-            <Col lg="12">
-              <div className="campaign ct-charts">
-                <div
-                  className="chart-wrapper"
-                  style={{
-                    width: "100%",
-                    margin: "0 auto",
-                    height: 250,
-                  }}
-                >
-                  {profitsData ? (
+            {Loading ? (
+              <Simpleloader />
+            ) : (
+              <Col lg="12">
+                <div className="campaign ct-charts">
+                  <div
+                    className="chart-wrapper"
+                    style={{
+                      width: "100%",
+                      margin: "0 auto",
+                      height: 250,
+                    }}
+                  >
                     <Line
                       data={lineData}
                       options={{
@@ -103,12 +105,10 @@ const Profits = (props) => {
                         },
                       }}
                     />
-                  ) : (
-                    <Simpleloader />
-                  )}
+                  </div>
                 </div>
-              </div>
-            </Col>
+              </Col>
+            )}
           </Row>
         </CardBody>
       </Card>
@@ -126,7 +126,7 @@ const Profits = (props) => {
   );
 };
 const mapStateToProps = ({ profits }) => {
-    const { profitsData } = profits;
-    return {profitsData}
-}
+  const { profitsData, Loading } = profits;
+  return { profitsData };
+};
 export default connect(mapStateToProps, { fetchProfitsDataRequest })(Profits);

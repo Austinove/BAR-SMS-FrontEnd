@@ -3,7 +3,6 @@ import { itemsConstants } from "../constants";
 const initialState = {
     Loading: false,
     storeItems: [],
-    Items: [],
     Logs: []
 }
 export function itemsReducer(state = initialState, action) {
@@ -48,7 +47,7 @@ export function itemsReducer(state = initialState, action) {
         case itemsConstants.create_storeItem_success:
             return {
                 ...state,
-                Items: action.Items,
+                storeItems: action.Items,
                 Loading: false
             };
         case itemsConstants.create_storeItem_fail:
@@ -64,7 +63,7 @@ export function itemsReducer(state = initialState, action) {
         case itemsConstants.edit_storeItem_success:
             return {
                 ...state,
-                Items: action.Items,
+                storeItems: action.Items,
                 Loading: false
             };
         case itemsConstants.edit_storeItem_fail:
@@ -80,7 +79,7 @@ export function itemsReducer(state = initialState, action) {
         case itemsConstants.delete_storeItem_success:
             return {
                 ...state,
-                Items: action.Items,
+                storeItems: action.Items,
                 Loading: false
             };
         case itemsConstants.delete_storeItem_fail:
