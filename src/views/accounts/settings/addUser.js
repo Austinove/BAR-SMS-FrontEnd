@@ -26,7 +26,7 @@ const AddUser = (props) => {
               residence: "",
               email: "",
               number: "",
-              userType:""
+              userType: "",
             }}
             validationSchema={Yup.object({
               userName: Yup.string()
@@ -40,37 +40,48 @@ const AddUser = (props) => {
                 .min(10, "Invalid Number")
                 .max(10, "Only 10 Numbers Needed")
                 .required("Phone Number is Required"),
-              userType: Yup.string()
-                .required("User Type is Required"),
+              userType: Yup.string().required("User Type is Required"),
             })}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
                 console.log(JSON.stringify(values, null, 2));
                 props.registerUserRequest(values);
                 setSubmitting(false);
-              }, 400);
+              }, 4000);
             }}
           >
-            {(formik) => (
-              <Form onSubmit={formik.handleSubmit}>
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <Form onSubmit={handleSubmit}>
                 <Row>
                   <Col md="6">
                     <FormGroup>
                       <Label>User Name *</Label>
                       <Input
                         className={
-                          formik.touched.userName && formik.errors.userName
+                          touched.userName && errors.userName
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         id="userName"
                         placeholder="User Name"
-                        {...formik.getFieldProps("userName")}
+                        name="userName"
+                        type="text"
+                        value={values.userName}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         // autoComplete="off"
                       />
-                      {formik.touched.userName && formik.errors.userName ? (
+                      {touched.userName && errors.userName ? (
                         <div className="text-danger mt-1 sm-font">
-                          {formik.errors.userName}
+                          {errors.userName}
                         </div>
                       ) : null}
                     </FormGroup>
@@ -80,18 +91,22 @@ const AddUser = (props) => {
                       <Label>Place of Residence *</Label>
                       <Input
                         className={
-                          formik.touched.residence && formik.errors.residence
+                          touched.residence && errors.residence
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         id="residence"
                         placeholder="Where User Lives"
-                        {...formik.getFieldProps("residence")}
+                        name="residence"
+                        type="text"
+                        value={values.residence}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         // autoComplete="off"
                       />
-                      {formik.touched.residence && formik.errors.residence ? (
+                      {touched.residence && errors.residence ? (
                         <div className="text-danger mt-1 sm-font">
-                          {formik.errors.residence}
+                          {errors.residence}
                         </div>
                       ) : null}
                     </FormGroup>
@@ -103,19 +118,22 @@ const AddUser = (props) => {
                       </Label>
                       <Input
                         className={
-                          formik.touched.email && formik.errors.email
+                          touched.email && errors.email
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         id="email"
                         type="email"
                         placeholder="user@email.com"
-                        {...formik.getFieldProps("email")}
+                        name="email"
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         // autoComplete="off"
                       />
-                      {formik.touched.email && formik.errors.email ? (
+                      {touched.email && errors.email ? (
                         <div className="text-danger mt-1 sm-font">
-                          {formik.errors.email}
+                          {errors.email}
                         </div>
                       ) : null}
                     </FormGroup>
@@ -125,18 +143,22 @@ const AddUser = (props) => {
                       <Label>Phone Number *</Label>
                       <Input
                         className={
-                          formik.touched.number && formik.errors.number
+                          touched.number && errors.number
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         id="number"
                         placeholder="07.........."
-                        {...formik.getFieldProps("number")}
+                        name="number"
+                        type="text"
+                        value={values.number}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                         // autoComplete="off"
                       />
-                      {formik.touched.number && formik.errors.number ? (
+                      {touched.number && errors.number ? (
                         <div className="text-danger mt-1 sm-font">
-                          {formik.errors.number}
+                          {errors.number}
                         </div>
                       ) : null}
                     </FormGroup>
@@ -146,23 +168,24 @@ const AddUser = (props) => {
                       <Label>User Type *</Label>
                       <Input
                         className={
-                          formik.touched.userType &&
-                          formik.errors.userType
+                          touched.userType && errors.userType
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         id="userType"
                         type="select"
-                        {...formik.getFieldProps("userType")}
+                        name="userType"
+                        value={values.userType}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       >
                         <option value="">Select Type</option>
                         <option value="worker">Employee</option>
                         <option value="admin">Admin</option>
                       </Input>
-                      {formik.touched.userType &&
-                      formik.errors.userType ? (
+                      {touched.userType && errors.userType ? (
                         <div className="text-danger mt-1 sm-font">
-                          {formik.errors.userType}
+                          {errors.userType}
                         </div>
                       ) : null}
                     </FormGroup>
@@ -170,7 +193,12 @@ const AddUser = (props) => {
                 </Row>
                 <Row>
                   <Col md="6">
-                    <Button type="submit" color="info" size="md">
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      color="info"
+                      size="md"
+                    >
                       <i className="fa fa-plus-circle"></i> Add User
                     </Button>
                   </Col>

@@ -72,14 +72,14 @@ const ItemForms = (props) => {
               itemName: item.name,
               manufacturer: item.manufacturer,
               price: item.price,
-              crateSize: item.crateSize
+              crateSize: item.crateSize,
             }}
             validationSchema={Yup.object({
-              itemName: Yup.string()
-                .required("Item Name is Required"),
-              manufacturer: Yup.string()
-                .required("Item Manufacturer is Required"),
-              price: Yup.number().required("Price is Required")
+              itemName: Yup.string().required("Item Name is Required"),
+              manufacturer: Yup.string().required(
+                "Item Manufacturer is Required"
+              ),
+              price: Yup.number().required("Price is Required"),
             })}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
@@ -89,8 +89,16 @@ const ItemForms = (props) => {
               }, 400);
             }}
           >
-            {(formik) => (
-              <Form onSubmit={formik.handleSubmit}>
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <Form onSubmit={handleSubmit}>
                 <Row>
                   <Col md="6">
                     <FormGroup>
@@ -98,16 +106,20 @@ const ItemForms = (props) => {
                       <Input
                         id="itemName"
                         className={
-                          formik.touched.itemName && formik.errors.itemName
+                          touched.itemName && errors.itemName
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         placeholder="Item Name"
-                        {...formik.getFieldProps("itemName")}
+                        name="itemName"
+                        type="text"
+                        value={values.itemName}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {formik.touched.itemName && formik.errors.itemName ? (
+                      {touched.itemName && errors.itemName ? (
                         <div className="text-danger mt-1 sm-font">
-                          {formik.errors.itemName}
+                          {errors.itemName}
                         </div>
                       ) : null}
                     </FormGroup>
@@ -118,20 +130,22 @@ const ItemForms = (props) => {
                       <Input
                         id="manufacturer"
                         className={
-                          formik.touched.manufacturer &&
-                            formik.errors.manufacturer
+                          touched.manufacturer && errors.manufacturer
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         placeholder="Item Manufacture"
-                        {...formik.getFieldProps("manufacturer")}
+                        type="text"
+                        name="manufacturer"
+                        value={values.manufacturer}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {formik.touched.manufacturer &&
-                        formik.errors.manufacturer ? (
-                          <div className="text-danger mt-1 sm-font">
-                            {formik.errors.manufacturer}
-                          </div>
-                        ) : null}
+                      {touched.manufacturer && errors.manufacturer ? (
+                        <div className="text-danger mt-1 sm-font">
+                          {errors.manufacturer}
+                        </div>
+                      ) : null}
                     </FormGroup>
                   </Col>
                   <Col md="6">
@@ -141,16 +155,19 @@ const ItemForms = (props) => {
                         type="number"
                         id="price"
                         className={
-                          formik.touched.price && formik.errors.price
+                          touched.price && errors.price
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         placeholder="3200"
-                        {...formik.getFieldProps("price")}
+                        name="price"
+                        value={values.price}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {formik.touched.price && formik.errors.price ? (
+                      {touched.price && errors.price ? (
                         <div className="text-danger mt-1 sm-font">
-                          {formik.errors.price}
+                          {errors.price}
                         </div>
                       ) : null}
                     </FormGroup>
@@ -164,25 +181,25 @@ const ItemForms = (props) => {
                           id="25Crate"
                           type="radio"
                           value="25"
-                          name='crateSize'
-                          onChange={formik.handleChange}
-                          defaultChecked={formik.values.crateRadio === "25"}
+                          name="crateSize"
+                          onChange={handleChange}
+                          defaultChecked={values.crateRadio === "25"}
                         />
                         <label
                           className="custom-control-label"
                           htmlFor="25Crate"
                         >
                           25 Bottles
-                          </label>
+                        </label>
                       </div>
                       <div className="custom-control custom-radio mb-3">
                         <input
                           className="custom-control-input"
-                          name='crateSize'
+                          name="crateSize"
                           id="20Crate"
                           value="20"
-                          defaultChecked={formik.values.crateRadio === "20"}
-                          onChange={formik.handleChange}
+                          defaultChecked={values.crateRadio === "20"}
+                          onChange={handleChange}
                           type="radio"
                         />
                         <label
@@ -190,7 +207,7 @@ const ItemForms = (props) => {
                           htmlFor="20Crate"
                         >
                           20 Bottles
-                          </label>
+                        </label>
                       </div>
                     </FormGroup>
                   </Col>
@@ -198,11 +215,14 @@ const ItemForms = (props) => {
                 <Row>
                   <Col md="6">
                     <FormGroup className="has-success">
-
-                      <Button type="submit" disabled={Loading} color="success" size="md">
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        color="success"
+                        size="md"
+                      >
                         <i className="fa fa-plus-circle"></i> Add Item
-                        </Button>
-                      {Loading ? (<span className="ml-4"> Please Wait...<Simpleloader /></span>) : null}
+                      </Button>
                     </FormGroup>
                   </Col>
                 </Row>

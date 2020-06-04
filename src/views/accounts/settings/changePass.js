@@ -42,11 +42,19 @@ const ChangePass = (props) => {
               console.log(JSON.stringify(values, null, 2));
               props.editUserRequest(values);
               setSubmitting(false);
-            }, 400)
+            }, 4000);
           }}
         >
-          {(formik) => (
-            <Form className="mt-4" onSubmit={formik.handleSubmit}>
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+          }) => (
+            <Form className="mt-4" onSubmit={handleSubmit}>
               <Row>
                 <Col md="8" className="ml-auto mr-auto">
                   <FormGroup>
@@ -55,16 +63,20 @@ const ChangePass = (props) => {
                       type="password"
                       placeholder="**********"
                       className={
-                        formik.touched.oldPassword && formik.errors.oldPassword
+                        touched.oldPassword && errors.oldPassword
                           ? "form-control-alternative errorInput"
                           : "form-control-alternative"
                       }
                       id="oldPassword"
-                      {...formik.getFieldProps("oldPassword")}
+                      name="oldPassword"
+                      type="password"
+                      value={values.oldPassword}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                     />
-                    {formik.touched.oldPassword && formik.errors.oldPassword ? (
+                    {touched.oldPassword && errors.oldPassword ? (
                       <div className="text-danger mt-1 sm-font">
-                        {formik.errors.oldPassword}
+                        {errors.oldPassword}
                       </div>
                     ) : null}
                   </FormGroup>
@@ -74,16 +86,20 @@ const ChangePass = (props) => {
                       type="password"
                       placeholder="**********"
                       className={
-                        formik.touched.password && formik.errors.password
+                        touched.password && errors.password
                           ? "form-control-alternative errorInput"
                           : "form-control-alternative"
                       }
                       id="password"
-                      {...formik.getFieldProps("password")}
+                      name="password"
+                      type="password"
+                      value={values.password}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                     />
-                    {formik.touched.password && formik.errors.password ? (
+                    {touched.password && errors.password ? (
                       <div className="text-danger mt-1 sm-font">
-                        {formik.errors.password}
+                        {errors.password}
                       </div>
                     ) : null}
                   </FormGroup>
@@ -93,18 +109,20 @@ const ChangePass = (props) => {
                       type="password"
                       placeholder="**********"
                       className={
-                        formik.touched.confirmPassword &&
-                        formik.errors.confirmPassword
+                        touched.confirmPassword && errors.confirmPassword
                           ? "form-control-alternative errorInput"
                           : "form-control-alternative"
                       }
                       id="confirmPassword"
-                      {...formik.getFieldProps("confirmPassword")}
+                      name="confirmPassword"
+                      type="password"
+                      value={values.confirmPassword}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
                     />
-                    {formik.touched.confirmPassword &&
-                    formik.errors.confirmPassword ? (
+                    {touched.confirmPassword && errors.confirmPassword ? (
                       <div className="text-danger mt-1 sm-font">
-                        {formik.errors.confirmPassword}
+                        {errors.confirmPassword}
                       </div>
                     ) : null}
                   </FormGroup>
@@ -112,7 +130,7 @@ const ChangePass = (props) => {
               </Row>
               <Row>
                 <Col md="8" className="ml-auto mr-auto">
-                  <Button color="success" size="md">
+                  <Button color="success" disabled={isSubmitting} size="md">
                     <i className="fa fa-save"></i> Save Changes
                   </Button>
                 </Col>

@@ -42,29 +42,40 @@ const Expences = (props) => {
               setTimeout(() => {
                 console.log(JSON.stringify(values, null, 2));
                 setSubmitting(false);
-              }, 400);
+              }, 4000);
             }}
           >
-            {(formik) => (
-              <Form onSubmit={formik.handleSubmit}>
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <Form onSubmit={handleSubmit}>
                 <Row>
                   <Col md="5">
                     <FormGroup>
                       <Label>Expense Description</Label>
                       <Input
                         className={
-                          formik.touched.desc && formik.errors.desc
+                          touched.desc && errors.desc
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         rows="2"
                         id="desc"
                         type="textarea"
-                        {...formik.getFieldProps("desc")}
+                        name="desc"
+                        value={values.desc}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {formik.touched.desc && formik.errors.desc ? (
+                      {touched.desc && errors.desc ? (
                         <div className="text-danger mt-1 sm-font">
-                          {formik.errors.desc}
+                          {errors.desc}
                         </div>
                       ) : null}
                     </FormGroup>
@@ -74,25 +85,28 @@ const Expences = (props) => {
                       <Label>Amount</Label>
                       <Input
                         className={
-                          formik.touched.amount && formik.errors.amount
+                          touched.amount && errors.amount
                             ? "form-control-alternative errorInput"
                             : "form-control-alternative"
                         }
                         placeholder="3000"
                         type="number"
                         id="amount"
-                        {...formik.getFieldProps("amount")}
+                        name="amount"
                         autoComplete="off"
+                        value={values.amount}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
                       />
-                      {formik.touched.amount && formik.errors.amount ? (
+                      {touched.amount && errors.amount ? (
                         <div className="text-danger mt-1 sm-font">
-                          {formik.errors.amount}
+                          {errors.amount}
                         </div>
                       ) : null}
                     </FormGroup>
                   </Col>
                   <Col md="2" className="d-flex align-items-center">
-                    <Button type="submit" color="light" className="btn-sm">
+                    <Button type="submit" disabled={isSubmitting} color="light" className="btn-sm">
                       <i className="fa fa-plus" /> Add Expenses
                     </Button>
                   </Col>
