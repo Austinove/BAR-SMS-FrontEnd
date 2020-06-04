@@ -3,6 +3,7 @@ import { userConstants } from "../constants";
 const initialState = {
     Users:[],
     Loading: false,
+    loginError:""
 };
 
 export function authReducer(state = initialState, action) {

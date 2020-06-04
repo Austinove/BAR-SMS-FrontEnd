@@ -12185,4 +12185,8 @@ User Profile
   width: 100%;
 }
 
+.full-loader {
+  margin: 50px 50% auto 50% !important;
+}
+
 /*# sourceMappingURL=style.css.map */

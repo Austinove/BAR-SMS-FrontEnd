@@ -1,8 +1,12 @@
-import React, { Component, Suspense } from "react";
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React, { Component, Suspense, lazy } from "react";
+import { Router, Route, Switch, Redirect, withRouter } from 'react-router-dom';
+import { history } from "../store";
 import { connect } from "react-redux";
+import { compose } from "redux";
 import Fulllayout from '../layouts/fulllayout';
-import Login from './auth/login/';
+import Loader from "react-spinners/RingLoader";
+import { Container } from "reactstrap";
+const Login = withRouter(lazy(() => import("./auth/login/index")));
 
 const RestrictedRoute = ({ component: Component, currentUrl, authUser, ...rest }) => {
     // const isTokenValid = authUser && jwtDecode(authUser.auth_token).exp > Date.now / 1000;
@@ -12,33 +16,41 @@ const RestrictedRoute = ({ component: Component, currentUrl, authUser, ...rest }
             {...rest}
             render={
                 props => isTokenValid ?
-                    (<Component {...props} />)
+                    (<Component exact {...props} />)
                     : (
-                        <Redirect
-                            from={currentUrl}
-                            to="/login"
-                        />
+                        currentUrl === "/login" ? null : (
+                            <Redirect
+                                to={{ pathname: "/login", state: { from: currentUrl } }}
+                            />)
                     )}
         />
     )
 }
-
 class App extends Component {
     render() {
-        let pathname = this.props.location.pathname;
-        if (this.props.location.pathname === "/login") {
-            pathname = "/"
-        }
         return (
-            <Switch>
-                <RestrictedRoute
-                    currentUrl={pathname}
-                    authUser={"testUser"}
-                    path="/"
-                    component={Fulllayout}
-                />
-                <Route path="/login" exact component={Login} />
-            </Switch>
+
+            <Suspense
+                fallback={
+                    <div className="full-loader">
+                        <Loader />
+                    </div>
+                }
+            >
+                <Switch>
+                    <Router history={history} >
+                        <div>
+                            <RestrictedRoute
+                                currentUrl={history.location.pathname}
+                                authUser={"user"}
+                                path="/"
+                                component={Fulllayout}
+                            />
+                            <Route exact path="/login" component={Login} />
+                        </div>
+                    </Router>
+                </Switch>
+            </Suspense>
         );
     }
 }
@@ -46,4 +58,4 @@ const mapStateToProps = ({ router }) => {
     const { location } = router;
     return { location };
 }
-export default connect(mapStateToProps)(App)
+export default compose(withRouter, connect(mapStateToProps))(App)

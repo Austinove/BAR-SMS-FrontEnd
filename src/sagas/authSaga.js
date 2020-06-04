@@ -23,6 +23,7 @@ const Users = [
 ];
 
 function* loginUser(payload){
+    console.log("sagas", payload);
     const {username, password} = payload;
     // create("api/url", null, JSON.stringify(payload));
     // yield put(loginUserSuccess({username, password}));
