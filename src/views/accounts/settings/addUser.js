@@ -1,4 +1,8 @@
 import React from "react";
+import { Formik } from "formik";
+import * as Yup from "yup";
+import { connect } from "react-redux";
+import { registerUserRequest } from "../../../actions/authActions";
 import {
   Form,
   Row,
@@ -9,10 +13,9 @@ import {
   Button,
   Label,
 } from "reactstrap";
-import { Formik } from "formik";
-import * as Yup from "yup";
 
-const AddUser = () => {
+
+const AddUser = (props) => {
   return (
     <Container>
       <Row>
@@ -43,6 +46,7 @@ const AddUser = () => {
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
                 console.log(JSON.stringify(values, null, 2));
+                props.registerUserRequest(values);
                 setSubmitting(false);
               }, 400);
             }}
@@ -179,5 +183,7 @@ const AddUser = () => {
     </Container>
   );
 };
-
-export default AddUser;
+const mapStateToProps = (state) => {
+  return {};
+}
+export default connect(mapStateToProps, {registerUserRequest})(AddUser);

@@ -1,7 +1,7 @@
 import { userConstants } from "../constants";
 
 const initialState = {
-    Users:"",
+    Users:[],
     Loading: false,
 };
 

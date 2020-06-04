@@ -48,10 +48,10 @@ export const registerUserFail = () => {
   };
 };
 //Editing
-export const editUserRequest = id => {
+export const editUserRequest = userData => {
   return {
     type: userConstants.edit_user,
-    id,
+    userData,
   };
 };
 export const editUserSuccess = () => {

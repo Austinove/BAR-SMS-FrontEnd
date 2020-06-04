@@ -212,3 +212,5 @@
 [0602/083712.465:ERROR:process_memory_win.cc(73)] ReadMemory at 0x5eea363acda0 of 512 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
 [0602/083712.465:ERROR:process_memory_win.cc(73)] ReadMemory at 0x62ec9ac25800 of 512 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
 [0602/083713.638:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0604/004756.331:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0604/004756.456:ERROR:exception_snapshot_win.cc(98)] thread ID 7236 not found in process

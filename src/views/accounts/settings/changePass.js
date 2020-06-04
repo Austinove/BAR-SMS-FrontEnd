@@ -1,4 +1,7 @@
 import React from 'react';
+import { Formik } from 'formik';
+import * as Yup from "yup";
+import { connect } from "react-redux";
 import { 
     Container, 
     CardHeader,
@@ -10,10 +13,9 @@ import {
     Row,
     Button
 } from 'reactstrap';
-import {Formik} from 'formik';
-import * as Yup from "yup";
+import { editUserRequest } from "../../../actions/authActions";
 
-const ChangePass = () => {
+const ChangePass = (props) => {
     return (
       <Container>
         <CardHeader>
@@ -38,8 +40,9 @@ const ChangePass = () => {
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
               console.log(JSON.stringify(values, null, 2));
+              props.editUserRequest(values);
               setSubmitting(false);
-            }, 400);
+            }, 400)
           }}
         >
           {(formik) => (
@@ -120,5 +123,7 @@ const ChangePass = () => {
       </Container>
     );
 }
-
-export default ChangePass
+const mapStateToProps = (state) => {
+  return {};
+}
+export default connect(mapStateToProps, {editUserRequest})(ChangePass)
