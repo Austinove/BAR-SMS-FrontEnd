@@ -7,11 +7,7 @@ import ThemeRoutes from "../routes/routing.js";
 import Loader from "../views/view-elements/loader/index.js";
 
 const Fulllayout = (props) => {
-  /*--------------------------------------------------------------------------------*/
-  /*Change the layout settings [HEADER,SIDEBAR && DARK LAYOUT] from here            */
-  /*--------------------------------------------------------------------------------*/
   const [width, setWidth] = useState(window.innerWidth);
-
   props.history.listen((location, action) => {
     if (
       window.innerWidth < 767 &&
@@ -22,10 +18,6 @@ const Fulllayout = (props) => {
       document.getElementById("main-wrapper").classList.toggle("show-sidebar");
     }
   });
-
-  /*--------------------------------------------------------------------------------*/
-  /*Function that handles sidebar, changes when resizing App                        */
-  /*--------------------------------------------------------------------------------*/
   useEffect(() => {
     const updateDimensions = () => {
       let element = document.getElementById("main-wrapper");
@@ -45,10 +37,6 @@ const Fulllayout = (props) => {
       window.removeEventListener("resize", updateDimensions.bind(null));
     };
   }, [width]);
-
-  /*--------------------------------------------------------------------------------*/
-  /* Theme Setting && Layout Options wiil be Change From Here                       */
-  /*--------------------------------------------------------------------------------*/
   return (
     <div
       id="main-wrapper"
@@ -59,17 +47,8 @@ const Fulllayout = (props) => {
       data-header-position="fixed"
       data-boxed-layout="full"
     >
-      {/*--------------------------------------------------------------------------------*/}
-      {/* Header                                                                         */}
-      {/*--------------------------------------------------------------------------------*/}
       <Header />
-      {/*--------------------------------------------------------------------------------*/}
-      {/* Sidebar                                                                        */}
-      {/*--------------------------------------------------------------------------------*/}
       <Sidebar {...props} routes={ThemeRoutes} />
-      {/*--------------------------------------------------------------------------------*/}
-      {/* Page Main-Content                                                              */}
-      {/*--------------------------------------------------------------------------------*/}
       <div className="page-wrapper d-block">
         <div className="page-content container-fluid">
           <Suspense
