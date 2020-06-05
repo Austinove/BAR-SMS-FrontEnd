@@ -88,6 +88,32 @@ const Items = [
     crateSize: 25,
   },
 ];
+const Logs = [
+  {
+    log_date: "26/4/2020",
+    item_action: "Added to Store",
+    itemName: "Nile Special",
+    quantity: 30
+  },
+  {
+    log_date: "26/4/2020",
+    item_action: "Added to Store",
+    itemName: "Nile Special",
+    quantity: 30
+  },
+  {
+    log_date: "26/4/2020",
+    item_action: "Added to Store",
+    itemName: "Nile Special",
+    quantity: 30
+  },
+  {
+    log_date: "26/4/2020",
+    item_action: "Added to Store",
+    itemName: "Nile Special",
+    quantity: 30
+  },
+]
 
 function* storeItems() {
     yield put(fetchStoreItemsSuccess(Items));
@@ -105,7 +131,7 @@ function* removeItem(){
     // yield put(removeStoreItemSuccess(Items));
 }
 function* storeLogs(){
-    // yield put(fetchStoreLogsSuccess(Logs));
+    yield put(fetchStoreLogsSuccess(Logs));
 }
 function* CDItem(itemData){
     // yield put(CDCounterItemSuccess(itemsData))

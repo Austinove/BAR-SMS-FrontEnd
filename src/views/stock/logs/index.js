@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { connect } from "react-redux";
 import {
     Card,
     CardBody,
@@ -9,9 +10,17 @@ import {
     Input,
     Form
 } from "reactstrap";
+import { fetchStoreLogsRequest } from "../../../actions/itemsActions";
 import LogDetails from "./logDetails.js";
 
-const StockLogs = () => {
+const StockLogs = (props) => {
+    const { Loading, Logs } = props;
+    useEffect(() => {
+        props.fetchStoreLogsRequest();
+        // return () => {
+        //     cleanup
+        // }
+    }, [Logs])
     return (
         <div>
             <Card>
@@ -41,11 +50,14 @@ const StockLogs = () => {
             </Card>
             <Card>
                 <CardBody>
-                    <LogDetails />
+                    <LogDetails Loading={Loading} Logs={Logs}/>
                 </CardBody>
             </Card>
         </div>
     )
 }
-
-export default StockLogs;
+const mapStateToProps = ({storeData}) => {
+    const { Loading, Logs } = storeData;
+    return { Loading, Logs };
+}
+export default connect(mapStateToProps, {fetchStoreLogsRequest})(StockLogs);

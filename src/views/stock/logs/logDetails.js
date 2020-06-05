@@ -2,35 +2,9 @@ import React from "react";
 import {
     Table,
 } from "reactstrap";
+import { Simpleloader } from "../../view-elements/loader";
 
-const Logs = [
-    {
-        log_date: "26/4/2020",
-        item_action: "Added to Store",
-        itemName: "Nile Special",
-        quantity: 30
-    },
-    {
-        log_date: "26/4/2020",
-        item_action: "Added to Store",
-        itemName: "Nile Special",
-        quantity: 30
-    },
-    {
-        log_date: "26/4/2020",
-        item_action: "Added to Store",
-        itemName: "Nile Special",
-        quantity: 30
-    },
-    {
-        log_date: "26/4/2020",
-        item_action: "Added to Store",
-        itemName: "Nile Special",
-        quantity: 30
-    },
-]
-
-const LogDetails = () => {
+const LogDetails = ({ Logs, Loading }) => {
     return (
 
         <Table className="no-wrap v-middle" responsive>
@@ -43,7 +17,9 @@ const LogDetails = () => {
                 </tr>
             </thead>
             <tbody>
-                {Logs.map((log, index) => (
+                {Loading ? (
+                    <tr><td span="4"><Simpleloader /></td></tr>
+                ) : Logs.map((log, index) => (
                     <tr key={index}>
                         <td>
                             {log.log_date}
@@ -57,7 +33,6 @@ const LogDetails = () => {
                         <td>{log.quantity}</td>
                     </tr>
                 ))}
-
             </tbody>
         </Table>
     );

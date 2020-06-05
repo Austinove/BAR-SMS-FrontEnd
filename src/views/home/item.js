@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Card, CardBody, Row, CardTitle, Col, Progress } from "reactstrap";
 import SalesModal from "../view-elements/modal/salesModal";
@@ -6,6 +6,14 @@ import { saleRequest } from "../../actions/counterActions";
 
 const Item = (props) => {
   const { item, makeSale } = props;
+  const [didMount, setDidMount] = useState(false);
+  useEffect(() => {
+    setDidMount(true);
+    return () => setDidMount(false);
+  }, [])
+  if(!didMount) {
+    return null;
+  }
   return (
     <Col className="mb-2" xs="12" lg="4" md="4">
       <div style={{ width: "18rem" }}>

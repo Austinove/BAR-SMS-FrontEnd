@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Modal,
@@ -25,7 +25,28 @@ const SalesModal = (props) => {
     itemId
   } = props;
   const [modal, setModal] = useState(false);
+  // const [didMount, setDidMount] = useState(false);
   const toggle = () => setModal(!modal);
+  // useEffect(() => {
+  //   let isCancelled = false;
+  //   const runAsync = async () => {
+  //     try {
+  //       if (!isCancelled) {
+  //         // do the job
+  //       }
+  //     } catch (e) {
+  //       if (!isCancelled) {
+  //         throw e;
+  //       }
+  //     }
+  //   };
+  //   runAsync();
+  //   return () => {
+  //     isCancelled = true;
+  //   };
+  // }, []);
+
+
   const btnSpan = (btnSpan_className, btn_icon, buttonLabel) => (
     <span className={btnSpan_className}>
       <i className={btn_icon} />
