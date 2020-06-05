@@ -15,42 +15,48 @@ const Items = [
     quantity: 100,
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
-    crateSize: 25
+    crateSize: 25,
+    id: 1
   },
   {
     name: "Pepsi",
     quantity: 500,
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
-    crateSize: 25
+    crateSize: 25,
+    id: 2
   },
   {
     name: "CocaCola",
     quantity: 300,
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
-    crateSize: 25
+    crateSize: 25,
+    id: 3
   },
   {
     name: "Nile Special",
     quantity: 450,
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
-    crateSize: 25
+    crateSize: 25,
+    id: 4
   },
   {
     name: "CocaCola",
     quantity: 300,
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
-    crateSize: 25
+    crateSize: 25,
+    id: 5
   },
   {
     name: "Nile Special",
     quantity: 450,
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
-    crateSize: 25
+    crateSize: 25,
+    id: 6
   },
   {
     name: "Nile Special",
@@ -58,6 +64,7 @@ const Items = [
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
     crateSize: 25,
+    id: 7
   },
   {
     name: "Pilsnar",
@@ -65,6 +72,7 @@ const Items = [
     manufacturer: "Nile Manufactures LTD",
     price: 3000,
     crateSize: 20,
+    id: 8
   },
   {
     name: "Tusker",
@@ -72,6 +80,7 @@ const Items = [
     manufacturer: "Nile Manufactures LTD",
     price: 3200,
     crateSize: 25,
+    id: 9
   },
   {
     name: "Nile",
@@ -79,6 +88,7 @@ const Items = [
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
     crateSize: 20,
+    id: 10
   },
   {
     name: "Nile Special",
@@ -86,6 +96,7 @@ const Items = [
     manufacturer: "Nile Manufactures LTD",
     price: 3500,
     crateSize: 25,
+    id: 11
   },
 ];
 const Logs = [

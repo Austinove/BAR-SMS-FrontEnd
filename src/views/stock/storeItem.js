@@ -1,18 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
 import {
   Col,
   Card,
   CardBody,
   CardTitle,
-  Row,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
+  Row
 } from "reactstrap";
 import SalesModal from "../view-elements/modal/salesModal";
-import { addStoreItemRequest } from "../../actions/itemsActions";
 
 
 const StoreItem = (props) => {
@@ -63,38 +58,19 @@ const StoreItem = (props) => {
                   btn_icon="fa fa-plus-circle"
                   modelTitle="Add Items to Store"
                   subLabel="Add to Store"
+                  itemId={item.id}
                 />
               </div>
               <div className="float-right">
-                <UncontrolledDropdown>
-                  <DropdownToggle caret color="light" className="btn-sm">
-                    <span className="text-nowrap text-primary">
-                      Counter Actions
-                    </span>
-                  </DropdownToggle>
-                  <DropdownMenu right className="user-dd dropDown-menu-custom">
-                    <div className="drop-items">
-                      <SalesModal
-                        buttonLabel="Add Item to Counter"
-                        className="modal-dialog-centered"
-                        btnSpan_className="text-nowrap text-primary"
-                        btn_icon="fa fa-plus-circle"
-                        modelTitle="Add Items to Counter"
-                        subLabel="Add Item"
-                      />
-                    </div>
-                    <div className="drop-items">
-                      <SalesModal
-                        buttonLabel="Remove from Counter"
-                        className="modal-dialog-centered"
-                        btnSpan_className="text-nowrap text-warning"
-                        btn_icon="fa fa-arrow-circle-left"
-                        modelTitle="Remove Items to Counter"
-                        subLabel="Remove Item"
-                      />
-                    </div>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
+                <SalesModal
+                  buttonLabel="Counter Actions"
+                  className="modal-dialog-centered"
+                  btnSpan_className="text-nowrap text-primary"
+                  btn_icon="fa fa-plus-circle"
+                  modelTitle="Counter Actions"
+                  subLabel="Action to Counter"
+                  itemId={item.id}
+                />
               </div>
             </div>
           </CardBody>
