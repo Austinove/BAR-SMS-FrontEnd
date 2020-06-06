@@ -31,7 +31,7 @@
         "yup": "^0.29.1"
     },
     "scripts": {
-        "start": "start-js",
+        "start": "npm-run-all -p watch-sass start-js",
         "start-js": "react-scripts start",
         "build": "npm run minify-css && react-scripts build",
         "minify-css": "node-sass --output-style src/assets/scss/style.scss src/assets/scss/style.css",
