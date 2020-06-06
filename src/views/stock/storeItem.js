@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 import SalesModal from "../view-elements/modal/salesModal";
 
-
+//-----------
 const StoreItem = (props) => {
   const { item } = props;
   return (
