@@ -1,3 +1,5 @@
+//API Url
+export const apiUrl = "http://localhost:5000";
 //Items Constants
 export const itemsConstants = {
   fetch_storeItems: "fetch_storeItems_request",

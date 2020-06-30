@@ -1,3 +1,10 @@
+
+export const options = (url, user) => {
+    return {
+        url,
+        body: JSON.stringify(user)
+    }
+}
 //Reading
 export const fetchData = (url, token) => {
     const reqHeaders = {
@@ -21,7 +28,7 @@ export const fetchData = (url, token) => {
         })
 };
 //Create
-export const create = (url, token, body) => {
+export const create = async (url, token = "", body) => {
     const reqHeaders = {
             "Content-type": "application/json"
         };
@@ -37,7 +44,7 @@ export const create = (url, token, body) => {
         headers: reqHeaders,
         body: body,
     }).then(response => {
-        return ({ response });
+        return (response.json());
     })
         .catch(error => {
             return (error)
@@ -88,3 +95,18 @@ export const remove = (url, token) => {
             return (error)
         })
 };
+
+// //Login
+// export const loginApi = (url, body) => {
+//     const reqHeaders = {
+//         "Content-type": "application/json"
+//     };
+//     fetch(url, {
+//         method: "post",
+//         headers:reqHeaders
+//     }).then(response => {
+//         return(response);
+//     }).catch(error => {
+//         return error;
+//     })
+// }

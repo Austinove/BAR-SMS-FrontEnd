@@ -1,6 +1,34 @@
 import { userConstants } from "../constants"
+import { create } from "../api";
+import { apiUrl } from "../constants";
+import axios from "axios";
 //Login User
-export const loginUserRequest = userData => {
+export const loginUserRequest = userData => dispatch => {
+  const body = {
+    username: userData.loginName,
+    password: userData.loginPassword
+  }
+  // console.log(userData);
+  axios.post(`${apiUrl}/api/auth`, body).then((res) =>
+    dispatch({
+      type: "ADD_ITEM",
+      payload: res.data,
+    })
+  );
+  // var real;
+  // const reqHeaders = {
+  //   "Content-type": "application/json"
+  // }
+  // fetch(`${apiUrl}/api/auth`, {
+  //   method: "post",
+  //   headers: reqHeaders,
+  //   body: JSON.stringify(body),
+  // }).then(response => response.json())
+  // .then(data => real = data)
+  //   .catch(error => {
+  //     return (error)
+  //   })
+  //   console.log(real);
   return {
     type: userConstants.login_user,
     userData,

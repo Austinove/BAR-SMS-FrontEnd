@@ -10,7 +10,7 @@ const Login = withRouter(lazy(() => import("./auth/login/index")));
 
 const RestrictedRoute = ({ component: Component, currentUrl, authUser, ...rest }) => {
     // const isTokenValid = authUser && jwtDecode(authUser.auth_token).exp > Date.now / 1000;
-    const isTokenValid = true;
+    const isTokenValid = false;
     return (
         <Route
             {...rest}

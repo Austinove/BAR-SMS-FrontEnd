@@ -37,10 +37,7 @@ const Login = (props) => {
                   })}
                   onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
-                      // setSubmitting(true);
-                      console.log(JSON.stringify(values, null, 2));
                       props.loginUserRequest(values);
-                      // setSubmitting(false);
                     }, 400);
                   }}
                 >
