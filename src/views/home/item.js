@@ -10,7 +10,7 @@ const Item = (props) => {
   useEffect(() => {
     setDidMount(true);
     return () => setDidMount(false);
-  }, [])
+  }, []);
   if(!didMount) {
     return null;
   }

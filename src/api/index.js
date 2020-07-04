@@ -1,11 +1,14 @@
 import API from "./api";
 import userAPI from "./user";
+import counterAPI from "./counterAPI";
 
 export {
     API,
-    userAPI
+    userAPI,
+    counterAPI
 };
 export default {
     API,
-    userAPI
+    userAPI,
+    counterAPI
 };

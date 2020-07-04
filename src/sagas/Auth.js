@@ -3,8 +3,6 @@ import { all, call, fork, put, takeEvery, select } from "redux-saga/effects";
 import { userConstants } from "../constants"
 import {
     loginUserSuccess,
-    fetchUsersSuccess,
-    fetchUsersFail,
     registerUserSuccess,
     registerUserFail,
     editUserSuccess,
@@ -12,14 +10,11 @@ import {
     removeUserSuccess,
     removeUserFail
 } from "../actions/authActions";
-import { apiUrl } from "../constants";
 import { push } from "connected-react-router";
 import { API, userAPI } from "../api";
 function* signInUser({ userData }) {
-    console.log(userData);
   const username = userData.loginName;
   const password = userData.loginPassword;
-
   try {
     const authData = yield call(API.request, userAPI.login(username, password));
     if (!authData) {

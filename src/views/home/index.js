@@ -14,6 +14,7 @@ class Home extends Component {
     this.props.saleRequest(itemData);
   }
   render() {
+    console.log(this.props.counterItems);
     return (
       <>
         <Row>
