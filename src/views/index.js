@@ -6,13 +6,13 @@ import { compose } from "redux";
 import Fulllayout from '../layouts/fulllayout';
 import Loader from "react-spinners/RingLoader";
 const Login = withRouter(lazy(() => import("./auth/login/index")));
-
+const tocken_check = true;
 const PrivateRoute = ({ component: Component, ...rest }) => (
    <Route 
     {...rest }
     render = {
         props =>
-            (JSON.parse(localStorage.getItem('sys_user'))&&JSON.parse(localStorage.getItem('sys_user')).token) ?
+            (tocken_check) ?
             (
                 <Component {...props} />
             ) :

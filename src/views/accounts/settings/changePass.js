@@ -28,7 +28,7 @@ const ChangePass = (props) => {
           initialValues={{ oldPassword: "", password: "", confirmPassword: "" }}
           validationSchema={Yup.object({
             oldPassword: Yup.string()
-              .min(6, "Password Must be Atlease 6 Characters")
+              .min(6, "Password Must be Atleast 6 Characters")
               .required("Old Password is Required"),
             password: Yup.string()
               .min(6, "Password Must be Atleast 6 Characters")
